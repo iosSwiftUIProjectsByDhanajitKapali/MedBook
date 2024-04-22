@@ -8,21 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */; };
-		E75CEE1C2BD6BED800F1F2F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE1B2BD6BED800F1F2F6 /* ContentView.swift */; };
 		E75CEE1E2BD6BED900F1F2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */; };
 		E75CEE212BD6BED900F1F2F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */; };
 		E75CEE232BD6BED900F1F2F6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE222BD6BED900F1F2F6 /* Persistence.swift */; };
 		E75CEE262BD6BED900F1F2F6 /* MedBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE242BD6BED900F1F2F6 /* MedBook.xcdatamodeld */; };
+		E75CEE302BD6CA6E00F1F2F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE2F2BD6CA6E00F1F2F6 /* HomeView.swift */; };
+		E75CEE322BD6CA9600F1F2F6 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE312BD6CA9600F1F2F6 /* SignupView.swift */; };
+		E75CEE342BD6CAC300F1F2F6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE332BD6CAC300F1F2F6 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E75CEE162BD6BED800F1F2F6 /* MedBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedBookApp.swift; sourceTree = "<group>"; };
-		E75CEE1B2BD6BED800F1F2F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E75CEE222BD6BED900F1F2F6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E75CEE252BD6BED900F1F2F6 /* MedBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MedBook.xcdatamodel; sourceTree = "<group>"; };
+		E75CEE2F2BD6CA6E00F1F2F6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = MedBook/HomeView.swift; sourceTree = SOURCE_ROOT; };
+		E75CEE312BD6CA9600F1F2F6 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		E75CEE332BD6CAC300F1F2F6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +59,14 @@
 		E75CEE182BD6BED800F1F2F6 /* MedBook */ = {
 			isa = PBXGroup;
 			children = (
+				E75CEE2D2BD6CA2F00F1F2F6 /* Views */,
 				E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */,
-				E75CEE1B2BD6BED800F1F2F6 /* ContentView.swift */,
 				E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */,
 				E75CEE222BD6BED900F1F2F6 /* Persistence.swift */,
 				E75CEE242BD6BED900F1F2F6 /* MedBook.xcdatamodeld */,
 				E75CEE1F2BD6BED900F1F2F6 /* Preview Content */,
+				E75CEE312BD6CA9600F1F2F6 /* SignupView.swift */,
+				E75CEE332BD6CAC300F1F2F6 /* LoginView.swift */,
 			);
 			path = MedBook;
 			sourceTree = "<group>";
@@ -71,6 +77,14 @@
 				E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E75CEE2D2BD6CA2F00F1F2F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E75CEE2F2BD6CA6E00F1F2F6 /* HomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +157,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E75CEE342BD6CAC300F1F2F6 /* LoginView.swift in Sources */,
 				E75CEE232BD6BED900F1F2F6 /* Persistence.swift in Sources */,
 				E75CEE262BD6BED900F1F2F6 /* MedBook.xcdatamodeld in Sources */,
-				E75CEE1C2BD6BED800F1F2F6 /* ContentView.swift in Sources */,
+				E75CEE302BD6CA6E00F1F2F6 /* HomeView.swift in Sources */,
 				E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */,
+				E75CEE322BD6CA9600F1F2F6 /* SignupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +311,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dhanajitkapali.MedBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -324,6 +344,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dhanajitkapali.MedBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
