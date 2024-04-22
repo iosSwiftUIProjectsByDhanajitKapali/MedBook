@@ -1,5 +1,5 @@
 //
-//  SignupView.swift
+//  SignupScreen.swift
 //  MedBook
 //
 //  Created by Dhanajit Kapali on 22/04/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignupView: View {
+struct SignupScreen: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State var email = ""
@@ -31,18 +31,13 @@ struct SignupView: View {
             emailPassword()
             
             Spacer()
-            
-            Picker("Options", selection: $selectedCountry) {
-                ForEach(0 ..< countries.count) {
-                    Text(self.countries[$0])
-                }
-            }
-            .pickerStyle(.wheel)
+            countrySelector()
             .padding()
+            
+            goButton()
+            
         }
-        //.navigationBarTitle("", displayMode: .inline)
         .navigationBarBackButtonHidden(true)
-        //.navigationBarItems(leading: EmptyView(), trailing: EmptyView())
     }
     
     @ViewBuilder func backButton() -> some View {
@@ -77,8 +72,29 @@ struct SignupView: View {
         
         TextField("Password", text: $password)
     }
+    
+    @ViewBuilder func countrySelector() -> some View {
+        Picker("Options", selection: $selectedCountry) {
+            ForEach(0 ..< countries.count) {
+                Text(self.countries[$0])
+            }
+        }
+        .pickerStyle(.wheel)
+    }
+    
+    @ViewBuilder func goButton() -> some View {
+        HStack {
+            Spacer()
+            NavigationLink(destination: HomeScreen()) {
+                CustomButtonLabel(title: "Let's go ->")
+            }
+            Spacer()
+        }
+    }
 }
 
 #Preview {
-    SignupView()
+    NavigationStack {
+        SignupScreen()
+    }
 }

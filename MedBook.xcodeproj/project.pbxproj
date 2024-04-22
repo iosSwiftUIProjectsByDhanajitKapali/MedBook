@@ -12,9 +12,10 @@
 		E75CEE212BD6BED900F1F2F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */; };
 		E75CEE232BD6BED900F1F2F6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE222BD6BED900F1F2F6 /* Persistence.swift */; };
 		E75CEE262BD6BED900F1F2F6 /* MedBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE242BD6BED900F1F2F6 /* MedBook.xcdatamodeld */; };
-		E75CEE302BD6CA6E00F1F2F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE2F2BD6CA6E00F1F2F6 /* HomeView.swift */; };
-		E75CEE322BD6CA9600F1F2F6 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE312BD6CA9600F1F2F6 /* SignupView.swift */; };
-		E75CEE342BD6CAC300F1F2F6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE332BD6CAC300F1F2F6 /* LoginView.swift */; };
+		E75CEE302BD6CA6E00F1F2F6 /* LandingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE2F2BD6CA6E00F1F2F6 /* LandingScreen.swift */; };
+		E75CEE322BD6CA9600F1F2F6 /* SignupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE312BD6CA9600F1F2F6 /* SignupScreen.swift */; };
+		E75CEE342BD6CAC300F1F2F6 /* LoginSceen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE332BD6CAC300F1F2F6 /* LoginSceen.swift */; };
+		E75CEE362BD6D6EC00F1F2F6 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE352BD6D6EC00F1F2F6 /* HomeScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,9 +25,10 @@
 		E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E75CEE222BD6BED900F1F2F6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E75CEE252BD6BED900F1F2F6 /* MedBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MedBook.xcdatamodel; sourceTree = "<group>"; };
-		E75CEE2F2BD6CA6E00F1F2F6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = MedBook/HomeView.swift; sourceTree = SOURCE_ROOT; };
-		E75CEE312BD6CA9600F1F2F6 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
-		E75CEE332BD6CAC300F1F2F6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E75CEE2F2BD6CA6E00F1F2F6 /* LandingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LandingScreen.swift; path = MedBook/LandingScreen.swift; sourceTree = SOURCE_ROOT; };
+		E75CEE312BD6CA9600F1F2F6 /* SignupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupScreen.swift; sourceTree = "<group>"; };
+		E75CEE332BD6CAC300F1F2F6 /* LoginSceen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceen.swift; sourceTree = "<group>"; };
+		E75CEE352BD6D6EC00F1F2F6 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 		E75CEE0D2BD6BED800F1F2F6 = {
 			isa = PBXGroup;
 			children = (
+				E75CEE352BD6D6EC00F1F2F6 /* HomeScreen.swift */,
 				E75CEE182BD6BED800F1F2F6 /* MedBook */,
 				E75CEE172BD6BED800F1F2F6 /* Products */,
 			);
@@ -65,8 +68,8 @@
 				E75CEE222BD6BED900F1F2F6 /* Persistence.swift */,
 				E75CEE242BD6BED900F1F2F6 /* MedBook.xcdatamodeld */,
 				E75CEE1F2BD6BED900F1F2F6 /* Preview Content */,
-				E75CEE312BD6CA9600F1F2F6 /* SignupView.swift */,
-				E75CEE332BD6CAC300F1F2F6 /* LoginView.swift */,
+				E75CEE312BD6CA9600F1F2F6 /* SignupScreen.swift */,
+				E75CEE332BD6CAC300F1F2F6 /* LoginSceen.swift */,
 			);
 			path = MedBook;
 			sourceTree = "<group>";
@@ -82,7 +85,7 @@
 		E75CEE2D2BD6CA2F00F1F2F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E75CEE2F2BD6CA6E00F1F2F6 /* HomeView.swift */,
+				E75CEE2F2BD6CA6E00F1F2F6 /* LandingScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,12 +160,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E75CEE342BD6CAC300F1F2F6 /* LoginView.swift in Sources */,
+				E75CEE342BD6CAC300F1F2F6 /* LoginSceen.swift in Sources */,
 				E75CEE232BD6BED900F1F2F6 /* Persistence.swift in Sources */,
+				E75CEE362BD6D6EC00F1F2F6 /* HomeScreen.swift in Sources */,
 				E75CEE262BD6BED900F1F2F6 /* MedBook.xcdatamodeld in Sources */,
-				E75CEE302BD6CA6E00F1F2F6 /* HomeView.swift in Sources */,
+				E75CEE302BD6CA6E00F1F2F6 /* LandingScreen.swift in Sources */,
 				E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */,
-				E75CEE322BD6CA9600F1F2F6 /* SignupView.swift in Sources */,
+				E75CEE322BD6CA9600F1F2F6 /* SignupScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,7 @@ struct MedBookApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                HomeView()
+                LandingScreen()
             }
             .preferredColorScheme(.light)
         }

@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  LandingScreen.swift
 //  MedBook
 //
 //  Created by Dhanajit Kapali on 22/04/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct HomeView: View {
+struct LandingScreen: View {
     
     var body: some View {
         VStack {
@@ -34,9 +34,9 @@ struct HomeView: View {
         .navigationTitle("MedBook")
         .navigationDestination(for: String.self) { dest in
             if dest == "Signup" {
-                SignupView()
+                SignupScreen()
             } else {
-                LoginView()
+                LoginScreen()
             }
         }
     }
@@ -47,7 +47,7 @@ struct HomeView: View {
 
 #Preview {
     NavigationStack {
-        HomeView()
+        LandingScreen()
     }
 }
 
