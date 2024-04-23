@@ -25,10 +25,10 @@ struct HomeScreen: View {
                 .padding(.top, 20)
              
             SearchBar(text: $searchText, isSearching: $isSearching) {
-                print(searchText)
+                viewModel.getBookListing(forTitle: searchText)
             }
             
-            if searchText.count > 0 {
+            if viewModel.books.count > 0 {
                 sortSegement()
                 .padding(.horizontal, 40)
             }
@@ -44,7 +44,7 @@ struct HomeScreen: View {
             trailing: bookMarkAndLogout()
         )
         .onAppear {
-            viewModel.getBookListing(forTitle: searchText)
+            //viewModel.getBookListing(forTitle: searchText)
         }
         .onChange(of: selectedSegment) { oldValue, newValue in
             viewModel.sortBooks(by: newValue)
@@ -126,8 +126,10 @@ extension HomeScreen {
 //            
 //        }
             
-        BookListView(books: viewModel.books)
-        
+        BookListView(books: $viewModel.books, bookmarkedBook: { book in
+            print(book.coverI)
+        })
+            
 //        List {
 //            ForEach(0..<viewModel.books.count, id: \.self) { i in
 //                BookListCell(book: viewModel.books[i])
@@ -142,7 +144,9 @@ extension HomeScreen {
 }
 
 struct BookListView: View {
-    let books: [Book]
+    @Binding var books: [Book]
+    
+    var bookmarkedBook: ((Book) -> Void)? = nil
     
     var body: some View {
         List {
@@ -151,6 +155,25 @@ struct BookListView: View {
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
+                    .swipeActions(edge: .trailing) {
+                        if books[i].isBookmarked {
+                            Button {
+                                books[i].isBookmarked.toggle()
+                                bookmarkedBook?(books[i])
+                            } label: {
+                                Label("Remove", systemImage: "bookmark.slash")
+                            }
+                            .tint(.red)
+                        } else {
+                            Button {
+                                books[i].isBookmarked.toggle()
+                                bookmarkedBook?(books[i])
+                            } label: {
+                                Label("Bookmark", systemImage: "bookmark")
+                            }
+                            .tint(.green)
+                        }
+                    }
                     .padding(.vertical, 20)
             }
             .listStyle(PlainListStyle())

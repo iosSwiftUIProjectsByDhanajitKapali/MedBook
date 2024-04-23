@@ -23,6 +23,7 @@
 		E76F60E12BD7C269003E7F0B /* BookListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F60E02BD7C269003E7F0B /* BookListModel.swift */; };
 		E76F60E32BD7DBDD003E7F0B /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F60E22BD7DBDD003E7F0B /* BookListCell.swift */; };
 		E76F60E52BD7DBFD003E7F0B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F60E42BD7DBFD003E7F0B /* SearchBar.swift */; };
+		E7B632222BD8247900B00270 /* BookmarkedBooksScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B632212BD8247900B00270 /* BookmarkedBooksScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		E76F60E02BD7C269003E7F0B /* BookListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListModel.swift; sourceTree = "<group>"; };
 		E76F60E22BD7DBDD003E7F0B /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
 		E76F60E42BD7DBFD003E7F0B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		E7B632212BD8247900B00270 /* BookmarkedBooksScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedBooksScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				E7B632162BD8108F00B00270 /* Signup */,
 				E7B632132BD8102000B00270 /* Home */,
 				E75CEE2D2BD6CA2F00F1F2F6 /* LandingScreen */,
+				E7B6321F2BD8242300B00270 /* BookmarkedBooks */,
 				E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */,
 				E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */,
 				E75CEE222BD6BED900F1F2F6 /* Persistence.swift */,
@@ -207,6 +210,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E7B6321F2BD8242300B00270 /* BookmarkedBooks */ = {
+			isa = PBXGroup;
+			children = (
+				E7B632202BD8243B00B00270 /* Views */,
+			);
+			path = BookmarkedBooks;
+			sourceTree = "<group>";
+		};
+		E7B632202BD8243B00B00270 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E7B632212BD8247900B00270 /* BookmarkedBooksScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,6 +307,7 @@
 				E75CEE232BD6BED900F1F2F6 /* Persistence.swift in Sources */,
 				E75CEE362BD6D6EC00F1F2F6 /* HomeScreen.swift in Sources */,
 				E75CEE262BD6BED900F1F2F6 /* MedBook.xcdatamodeld in Sources */,
+				E7B632222BD8247900B00270 /* BookmarkedBooksScreen.swift in Sources */,
 				E75CEE302BD6CA6E00F1F2F6 /* LandingScreen.swift in Sources */,
 				E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */,
 				E75CEE322BD6CA9600F1F2F6 /* SignupScreen.swift in Sources */,

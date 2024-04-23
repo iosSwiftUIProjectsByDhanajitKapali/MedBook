@@ -22,6 +22,7 @@ struct Book: Codable {
     let ratingsCount: Int
     let authorName: [String]
     let coverI: Int
+    var isBookmarked = false
 
     enum CodingKeys: String, CodingKey {
         case title

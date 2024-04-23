@@ -14,6 +14,9 @@ class HomeScreenViewModel: ObservableObject {
     @Published var selectedSegmentIndex = 0
     
     func getBookListing(forTitle: String) {
+        if forTitle.count < 3 {
+            return
+        }
         let urlString = "https://openlibrary.org/search.json?title=\(forTitle)&limit=10"
         
         NetworkManager().getApiData(
