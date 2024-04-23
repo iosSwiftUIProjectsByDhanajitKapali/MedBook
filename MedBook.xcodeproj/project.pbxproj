@@ -45,7 +45,6 @@
 		E75CEE0D2BD6BED800F1F2F6 = {
 			isa = PBXGroup;
 			children = (
-				E75CEE352BD6D6EC00F1F2F6 /* HomeScreen.swift */,
 				E75CEE182BD6BED800F1F2F6 /* MedBook */,
 				E75CEE172BD6BED800F1F2F6 /* Products */,
 			);
@@ -62,6 +61,7 @@
 		E75CEE182BD6BED800F1F2F6 /* MedBook */ = {
 			isa = PBXGroup;
 			children = (
+				E75CEE352BD6D6EC00F1F2F6 /* HomeScreen.swift */,
 				E75CEE2D2BD6CA2F00F1F2F6 /* Views */,
 				E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */,
 				E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */,
