@@ -24,7 +24,9 @@ struct HomeScreen: View {
                 .background(.red)
                 .padding(.top, 20)
              
-            SearchBar(text: $searchText, isSearching: $isSearching)
+            SearchBar(text: $searchText, isSearching: $isSearching) {
+                print(searchText)
+            }
             
             if searchText.count > 0 {
                 sortSegement()
