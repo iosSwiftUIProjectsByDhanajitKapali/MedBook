@@ -32,7 +32,7 @@
 		E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E75CEE222BD6BED900F1F2F6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E75CEE252BD6BED900F1F2F6 /* MedBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MedBook.xcdatamodel; sourceTree = "<group>"; };
-		E75CEE2F2BD6CA6E00F1F2F6 /* LandingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LandingScreen.swift; path = MedBook/LandingScreen.swift; sourceTree = SOURCE_ROOT; };
+		E75CEE2F2BD6CA6E00F1F2F6 /* LandingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LandingScreen.swift; path = MedBook/LandingScreen/Views/LandingScreen.swift; sourceTree = SOURCE_ROOT; };
 		E75CEE312BD6CA9600F1F2F6 /* SignupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupScreen.swift; sourceTree = "<group>"; };
 		E75CEE332BD6CAC300F1F2F6 /* LoginSceen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceen.swift; sourceTree = "<group>"; };
 		E75CEE352BD6D6EC00F1F2F6 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
@@ -75,22 +75,17 @@
 		E75CEE182BD6BED800F1F2F6 /* MedBook */ = {
 			isa = PBXGroup;
 			children = (
-				E75CEE352BD6D6EC00F1F2F6 /* HomeScreen.swift */,
-				E75CEE2D2BD6CA2F00F1F2F6 /* Views */,
+				E7B6321D2BD8114E00B00270 /* ReusableComponents */,
+				E7B6321C2BD8113C00B00270 /* Networking */,
+				E7B632172BD8109800B00270 /* Login */,
+				E7B632162BD8108F00B00270 /* Signup */,
+				E7B632132BD8102000B00270 /* Home */,
+				E75CEE2D2BD6CA2F00F1F2F6 /* LandingScreen */,
 				E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */,
 				E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */,
 				E75CEE222BD6BED900F1F2F6 /* Persistence.swift */,
 				E75CEE242BD6BED900F1F2F6 /* MedBook.xcdatamodeld */,
 				E75CEE1F2BD6BED900F1F2F6 /* Preview Content */,
-				E75CEE312BD6CA9600F1F2F6 /* SignupScreen.swift */,
-				E75CEE332BD6CAC300F1F2F6 /* LoginSceen.swift */,
-				E76F60D82BD7C0FA003E7F0B /* HomeScreenViewModel.swift */,
-				E76F60DA2BD7C155003E7F0B /* NetworkManager.swift */,
-				E76F60DC2BD7C193003E7F0B /* Constants+NetworkManager.swift */,
-				E76F60DE2BD7C1A9003E7F0B /* Constants.swift */,
-				E76F60E02BD7C269003E7F0B /* BookListModel.swift */,
-				E76F60E22BD7DBDD003E7F0B /* BookListCell.swift */,
-				E76F60E42BD7DBFD003E7F0B /* SearchBar.swift */,
 			);
 			path = MedBook;
 			sourceTree = "<group>";
@@ -103,10 +98,111 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E75CEE2D2BD6CA2F00F1F2F6 /* Views */ = {
+		E75CEE2D2BD6CA2F00F1F2F6 /* LandingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E7B632152BD8107500B00270 /* Views */,
+			);
+			path = LandingScreen;
+			sourceTree = "<group>";
+		};
+		E7B632132BD8102000B00270 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E7B632142BD8102C00B00270 /* Views */,
+				E7B6321A2BD810B800B00270 /* ViewModel */,
+				E7B6321B2BD810DE00B00270 /* Models */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E7B632142BD8102C00B00270 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E75CEE352BD6D6EC00F1F2F6 /* HomeScreen.swift */,
+				E76F60E22BD7DBDD003E7F0B /* BookListCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E7B632152BD8107500B00270 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				E75CEE2F2BD6CA6E00F1F2F6 /* LandingScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E7B632162BD8108F00B00270 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				E7B632192BD810A500B00270 /* Views */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		E7B632172BD8109800B00270 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E7B632182BD8109F00B00270 /* Views */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E7B632182BD8109F00B00270 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E75CEE332BD6CAC300F1F2F6 /* LoginSceen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E7B632192BD810A500B00270 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E75CEE312BD6CA9600F1F2F6 /* SignupScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E7B6321A2BD810B800B00270 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E76F60D82BD7C0FA003E7F0B /* HomeScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E7B6321B2BD810DE00B00270 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E76F60E02BD7C269003E7F0B /* BookListModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E7B6321C2BD8113C00B00270 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E76F60DA2BD7C155003E7F0B /* NetworkManager.swift */,
+				E76F60DC2BD7C193003E7F0B /* Constants+NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E7B6321D2BD8114E00B00270 /* ReusableComponents */ = {
+			isa = PBXGroup;
+			children = (
+				E76F60DE2BD7C1A9003E7F0B /* Constants.swift */,
+				E7B6321E2BD8116A00B00270 /* Views */,
+			);
+			path = ReusableComponents;
+			sourceTree = "<group>";
+		};
+		E7B6321E2BD8116A00B00270 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E76F60E42BD7DBFD003E7F0B /* SearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
