@@ -13,13 +13,25 @@ struct BookListModel: Codable {
     static func mockBookListModels() -> [BookListModel] {
         let book1 = Book(title: "Book 1", ratingsAverage: 4.5, ratingsCount: 100, authorName: ["Author 1"], coverI: 1)
         let book2 = Book(title: "Book 2", ratingsAverage: 3.8, ratingsCount: 80, authorName: ["Author 2"], coverI: 2)
-        let book3 = Book(title: "Book 3", ratingsAverage: 4.0, ratingsCount: 120, authorName: ["Author 3"], coverI: 3)
+        let book3 = Book(title: "Book 3", ratingsAverage: 4.0, ratingsCount: 4890, authorName: ["Author 3"], coverI: 3)
         
         let bookList1 = BookListModel(books: [book1])
         let bookList2 = BookListModel(books: [book2])
         let bookList3 = BookListModel(books: [book3])
         
         return [bookList1, bookList2, bookList3]
+    }
+    
+    static func mockBooks() -> [Book] {
+        let book1 = Book(title: "Book 1", ratingsAverage: 4.5, ratingsCount: 100, authorName: ["Author 1 Author 1"], coverI: 1)
+        let book2 = Book(title: "Book 2", ratingsAverage: 3.8, ratingsCount: 80, authorName: ["Author 2"], coverI: 2)
+        let book3 = Book(title: "Book 3", ratingsAverage: 4.0, ratingsCount: 120, authorName: ["Author 3"], coverI: 3)
+        
+        return [book1, book2, book3]
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case books = "docs"
     }
 
 }

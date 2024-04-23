@@ -11,7 +11,6 @@ struct HomeScreen: View {
     
     @StateObject private var viewModel = HomeScreenViewModel()
     
-    @State var books: [BookListModel] = []
     @State var searchText: String = ""
     @State var isSearching: Bool = false
     
@@ -106,17 +105,21 @@ extension HomeScreen {
     
     @ViewBuilder func bookList() -> some View {
         List {
-            ForEach(0..<books.count, id: \.self) { i in
-                Text("LOL")
+            ForEach(0..<viewModel.books.count, id: \.self) { i in
+                BookListCell(book: viewModel.books[i])
+                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .padding(.vertical, 20)
             }
-            .listStyle(.plain)
+            .listStyle(PlainListStyle())
         }
     }
 }
 
 #Preview {
     NavigationStack {
-        HomeScreen(books: BookListModel.mockBookListModels())
+        HomeScreen()
     }
 }
 

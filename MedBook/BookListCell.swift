@@ -14,22 +14,19 @@ struct BookListCell: View {
     var body: some View {
         HStack(spacing: 0) {
             AsyncImage(url: URL(string: "https://covers.openlibrary.org/b/id/\(book.coverI)-M.jpg")) { image in
-                        image
-                            .resizable()
-                            //.aspectRatio(contentMode: .fit)
-                            //.background(.red)
-                            .frame(height: 100)
-                            .clipped()
-                    } placeholder: {
-                        Image(systemName: "photo")
-                            .resizable()
-                    }
-                    .aspectRatio(1.0, contentMode: .fit)
-                    //.background(.red)
-                    .border(.gray, width: 5)
-                    .cornerRadius(5)
-                    .frame(height: 100)
-                    .padding()
+                image
+                    .resizable()
+                
+            } placeholder: {
+                Image(systemName: "photo")
+                    .resizable()
+            }
+            .aspectRatio(1.0, contentMode: .fit)
+            //.background(.red)
+            .frame(height: 70)
+            .border(Color.gray.opacity(0.6), width: 5)
+            .cornerRadius(5)
+            .padding(.leading, 10)
                     
             
             VStack(alignment: .leading, spacing: 10) {
@@ -37,11 +34,14 @@ struct BookListCell: View {
                     .fontWeight(.medium)
                     .font(.title3)
                 
-                HStack(spacing:10) {
+                HStack(spacing:0) {
                     
                     Text("\(book.authorName.first ?? "")")
                         .foregroundStyle(.gray)
                         .font(.subheadline)
+                        .background(.red)
+                    
+                    Spacer()
                     
                     HStack(spacing: 4) {
                         Image(systemName: "star.fill")
@@ -49,6 +49,7 @@ struct BookListCell: View {
                         Text(String(format: "%.1f", book.ratingsAverage))
                             .font(.subheadline)
                     }
+                    .padding(.trailing, 5)
                     
                     HStack(spacing: 4) {
                         Image(systemName: "doc.plaintext")
@@ -56,6 +57,7 @@ struct BookListCell: View {
                         Text("\(book.ratingsCount)")
                             .font(.subheadline)
                     }
+                    .frame(width: 51)
                 }
             }
             .padding()
@@ -65,7 +67,7 @@ struct BookListCell: View {
         }
         .background(.white)
         .cornerRadius(10)
-        .frame(height: 100)
+        .frame(height: 65)
         
     }
 }
