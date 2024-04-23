@@ -11,9 +11,6 @@ struct SignupScreen: View {
     @Environment(\.presentationMode) var presentationMode
     
     @StateObject var viewModel = SignupScreenViewModel()
-    
-    @State var email = ""
-    @State var password = ""
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -71,12 +68,12 @@ struct SignupScreen: View {
     
     @ViewBuilder func emailPassword() -> some View {
         VStack(spacing: 20) {
-            TextField("Email", text: $email)
+            TextField("Email", text: $viewModel.email)
                 .padding()
                 .background(Color.gray.opacity(0.1))
                 .cornerRadius(10)
                 
-            TextField("Password", text: $password)
+            TextField("Password", text: $viewModel.password)
                 .padding()
                 .background(Color.gray.opacity(0.1))
                 .cornerRadius(10)
@@ -96,9 +93,14 @@ struct SignupScreen: View {
     @ViewBuilder func goButton() -> some View {
         HStack {
             Spacer()
-            NavigationLink(destination: HomeScreen()) {
-                CustomButtonLabel(title: "Let's go ->")
+            if viewModel.isEmailValid && viewModel.isPasswordValid {
+                NavigationLink(destination: HomeScreen()) {
+                    CustomButtonLabel(title: "Let's go ->")
+                }
+            } else {
+                CustomDisabledButtonLabel(title: "Let's go ->")
             }
+            
             Spacer()
         }
     }

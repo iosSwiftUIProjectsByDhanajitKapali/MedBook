@@ -76,6 +76,23 @@ struct CustomButton: View {
 }
 
 
+struct CustomDisabledButtonLabel: View {
+    
+    let title: String
+    
+    var body: some View {
+        Text(title)
+            .fontWeight(.medium)
+            .padding()
+            .foregroundColor(.gray)
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.gray, lineWidth: 2)
+            )
+    }
+}
+
+
 struct CustomButtonLabel: View {
     
     let title: String
