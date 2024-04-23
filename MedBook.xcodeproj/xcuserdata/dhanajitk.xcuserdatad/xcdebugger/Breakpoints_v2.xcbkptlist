@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EE657FAB-EB5F-4AEF-8E24-AC03E7657F29"
-            shouldBeEnabled = "No"
+            uuid = "62F5C633-B189-45DA-B4BF-D6D17F36D420"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MedBook/HomeScreen.swift"
+            filePath = "MedBook/HomeScreenViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "logOutButton()"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getBookListing(forTitle:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

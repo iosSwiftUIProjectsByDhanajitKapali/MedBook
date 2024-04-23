@@ -9,7 +9,9 @@ import SwiftUI
 
 struct HomeScreen: View {
     
-    @State var books: [String] = ["1", "2", "3", "4"]
+    @StateObject private var viewModel = HomeScreenViewModel()
+    
+    @State var books: [BookListModel] = []
     @State var searchText: String = ""
     @State var isSearching: Bool = false
     
@@ -29,22 +31,24 @@ struct HomeScreen: View {
                 .padding(.horizontal, 40)
             }
             
-            List {
-                ForEach(books, id: \.self) { ids in
-                    Text(ids)
-                        .listRowSeparator(.hidden, edges: .all)
-                }
-                .listStyle(.plain)
-            }
-            
-            
+            bookList()
             
             Spacer()
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: navTitleImage(), trailing: bookMarkAndLogout())
+        .navigationBarItems(
+            leading: navTitleImage(),
+            trailing: bookMarkAndLogout()
+        )
+        .onAppear {
+            viewModel.getBookListing(forTitle: "game")
+        }
     }
     
+    
+}
+
+extension HomeScreen {
     @ViewBuilder func navTitleImage() -> some View {
         HStack {
             Image(systemName: "book.fill")
@@ -99,59 +103,22 @@ struct HomeScreen: View {
             .pickerStyle(SegmentedPickerStyle())
         }
     }
+    
+    @ViewBuilder func bookList() -> some View {
+        List {
+            ForEach(0..<books.count, id: \.self) { i in
+                Text("LOL")
+            }
+            .listStyle(.plain)
+        }
+    }
 }
 
 #Preview {
     NavigationStack {
-        HomeScreen()
+        HomeScreen(books: BookListModel.mockBookListModels())
     }
 }
 
 
-struct SearchBar: UIViewRepresentable {
-    @Binding var text: String
-    @Binding var isSearching: Bool
-    
-    class Coordinator: NSObject, UISearchBarDelegate {
-        @Binding var text: String
-        @Binding var isSearching: Bool
 
-        init(text: Binding<String>, isSearching: Binding<Bool>) {
-            _text = text
-            _isSearching = isSearching
-        }
-
-        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            text = searchText
-            isSearching = true
-        }
-
-        func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-            isSearching = false
-            searchBar.text = ""
-            searchBar.resignFirstResponder()
-        }
-    }
-
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(text: $text, isSearching: $isSearching)
-    }
-
-    func makeUIView(context: Context) -> UISearchBar {
-        let searchBar = UISearchBar()
-        searchBar.delegate = context.coordinator
-        searchBar.placeholder = "Search"
-        searchBar.backgroundImage = UIImage()
-        return searchBar
-    }
-
-    func updateUIView(_ uiView: UISearchBar, context: Context) {
-        uiView.text = text
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchBar(text: .constant("Test"), isSearching: .constant(true))
-    }
-}
