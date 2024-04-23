@@ -11,11 +11,12 @@ struct HomeScreen: View {
     
     @StateObject private var viewModel = HomeScreenViewModel()
     
-    @State var searchText: String = ""
+    @State var searchText: String = "game"
     @State var isSearching: Bool = false
     
-    @State private var selectedSegmentIndex = 0
-    let segments = ["Title", "Average", "Hits"]
+    //@State private var selectedSegmentIndex = 0
+    @State private var selectedSegment: BooksSortType = .title
+    private let segments = ["Title", "Average", "Hits"]
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -25,10 +26,11 @@ struct HomeScreen: View {
              
             SearchBar(text: $searchText, isSearching: $isSearching)
             
-            if !isSearching {
+            if searchText.count > 0 {
                 sortSegement()
                 .padding(.horizontal, 40)
             }
+            
             
             bookList()
             
@@ -40,11 +42,21 @@ struct HomeScreen: View {
             trailing: bookMarkAndLogout()
         )
         .onAppear {
-            viewModel.getBookListing(forTitle: "game")
+            viewModel.getBookListing(forTitle: searchText)
+        }
+        .onChange(of: selectedSegment) { oldValue, newValue in
+            viewModel.sortBooks(by: newValue)
         }
     }
     
     
+    
+}
+
+enum BooksSortType: String, CaseIterable {
+    case title = "Title"
+    case average = "Average"
+    case hits = "Hits"
 }
 
 extension HomeScreen {
@@ -93,10 +105,10 @@ extension HomeScreen {
     
     @ViewBuilder func sortSegement() -> some View {
         HStack {
-            Text("SortBy: ")
-            Picker(selection: $selectedSegmentIndex, label: Text("Segments")) {
-                ForEach(0..<segments.count) { index in
-                    Text(segments[index]).tag(index)
+            Text("Sort By: ")
+            Picker("SortBy", selection: $selectedSegment) {
+                ForEach(BooksSortType.allCases, id: \.self) { index in
+                    Text(index.rawValue)
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
@@ -104,9 +116,36 @@ extension HomeScreen {
     }
     
     @ViewBuilder func bookList() -> some View {
+//        if selectedSegment == .title {
+//            BookListView(books: viewModel.books)
+//        } else if selectedSegment == .average {
+//            
+//        } else {
+//            
+//        }
+            
+        BookListView(books: viewModel.books)
+        
+//        List {
+//            ForEach(0..<viewModel.books.count, id: \.self) { i in
+//                BookListCell(book: viewModel.books[i])
+//                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+//                    .listRowBackground(Color.clear)
+//                    .listRowSeparator(.hidden)
+//                    .padding(.vertical, 20)
+//            }
+//            .listStyle(PlainListStyle())
+//        }
+    }
+}
+
+struct BookListView: View {
+    let books: [Book]
+    
+    var body: some View {
         List {
-            ForEach(0..<viewModel.books.count, id: \.self) { i in
-                BookListCell(book: viewModel.books[i])
+            ForEach(0..<books.count, id: \.self) { i in
+                BookListCell(book: books[i])
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)

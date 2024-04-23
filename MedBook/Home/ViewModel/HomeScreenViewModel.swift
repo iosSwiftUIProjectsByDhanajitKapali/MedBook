@@ -9,7 +9,9 @@ import Foundation
 
 class HomeScreenViewModel: ObservableObject {
     
+    @Published var sortedBooks: [Book] = BookListModel.mockBooks()
     @Published var books: [Book] = BookListModel.mockBooks()
+    @Published var selectedSegmentIndex = 0
     
     func getBookListing(forTitle: String) {
         let urlString = "https://openlibrary.org/search.json?title=\(forTitle)&limit=10"
@@ -26,6 +28,17 @@ class HomeScreenViewModel: ObservableObject {
                     print(failure)
                 }
             }
+    }
+    
+    func sortBooks(by sortType: BooksSortType) {
+        switch sortType {
+        case .title:
+            books.sort { $0.title > $1.title }
+        case .average:
+            books.sort { $0.ratingsAverage > $1.ratingsAverage }
+        case .hits:
+            books.sort { $0.ratingsCount > $1.ratingsCount }
+        }
     }
 }
 
