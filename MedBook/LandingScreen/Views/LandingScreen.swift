@@ -14,7 +14,10 @@ struct LandingScreen: View {
         VStack {
             
             Spacer()
-            Image(systemName: "person")
+            Image("onlineDoctor")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding()
             Spacer()
             
             HStack {

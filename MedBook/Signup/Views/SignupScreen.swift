@@ -10,34 +10,37 @@ import SwiftUI
 struct SignupScreen: View {
     @Environment(\.presentationMode) var presentationMode
     
+    @StateObject var viewModel = SignupScreenViewModel()
+    
     @State var email = ""
     @State var password = ""
-    
-    let countries = ["Option 1", "Option 2", "Option 3"]
 
-       // State variable to keep track of the selected option
-    @State private var selectedCountry = 0
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             
             backButton()
-                .padding(.top, 50)
+                .padding(.leading, 10)
+                .padding(.bottom, 20)
             
             welcomeTitle()
+                .padding(.leading, 10)
             
             Spacer()
-            
             emailPassword()
-            
             Spacer()
-            countrySelector()
-            .padding()
-            
+            if $viewModel.countryList.count > 0 {
+                countrySelector()
+                    .frame(height: 140)
+                    .padding(.top, 10)
+                    .padding(.bottom, 50)
+            }
             goButton()
             
         }
         .navigationBarBackButtonHidden(true)
+        .onAppear {
+            viewModel.getCountries()
+        }
     }
     
     @ViewBuilder func backButton() -> some View {
@@ -67,16 +70,24 @@ struct SignupScreen: View {
     }
     
     @ViewBuilder func emailPassword() -> some View {
-        TextField("Email", text: $email)
-            
-        
-        TextField("Password", text: $password)
+        VStack(spacing: 20) {
+            TextField("Email", text: $email)
+                .padding()
+                .background(Color.gray.opacity(0.1))
+                .cornerRadius(10)
+                
+            TextField("Password", text: $password)
+                .padding()
+                .background(Color.gray.opacity(0.1))
+                .cornerRadius(10)
+        }
+        .padding(.horizontal, 15)
     }
     
     @ViewBuilder func countrySelector() -> some View {
-        Picker("Options", selection: $selectedCountry) {
-            ForEach(0 ..< countries.count) {
-                Text(self.countries[$0])
+        Picker("Options", selection: $viewModel.selectedCountry) {
+            ForEach(0 ..< $viewModel.countryList.count) { index in
+                Text(viewModel.countryList[index])
             }
         }
         .pickerStyle(.wheel)

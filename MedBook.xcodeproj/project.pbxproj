@@ -24,6 +24,7 @@
 		E76F60E32BD7DBDD003E7F0B /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F60E22BD7DBDD003E7F0B /* BookListCell.swift */; };
 		E76F60E52BD7DBFD003E7F0B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F60E42BD7DBFD003E7F0B /* SearchBar.swift */; };
 		E7B632222BD8247900B00270 /* BookmarkedBooksScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B632212BD8247900B00270 /* BookmarkedBooksScreen.swift */; };
+		E7B632252BD8360700B00270 /* SignupScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B632242BD8360700B00270 /* SignupScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		E76F60E22BD7DBDD003E7F0B /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
 		E76F60E42BD7DBFD003E7F0B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		E7B632212BD8247900B00270 /* BookmarkedBooksScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedBooksScreen.swift; sourceTree = "<group>"; };
+		E7B632242BD8360700B00270 /* SignupScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				E7B632192BD810A500B00270 /* Views */,
+				E7B632232BD835ED00B00270 /* ViewModel */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -226,6 +229,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E7B632232BD835ED00B00270 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E7B632242BD8360700B00270 /* SignupScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,6 +315,7 @@
 				E76F60DD2BD7C193003E7F0B /* Constants+NetworkManager.swift in Sources */,
 				E76F60D92BD7C0FA003E7F0B /* HomeScreenViewModel.swift in Sources */,
 				E76F60E52BD7DBFD003E7F0B /* SearchBar.swift in Sources */,
+				E7B632252BD8360700B00270 /* SignupScreenViewModel.swift in Sources */,
 				E75CEE232BD6BED900F1F2F6 /* Persistence.swift in Sources */,
 				E75CEE362BD6D6EC00F1F2F6 /* HomeScreen.swift in Sources */,
 				E75CEE262BD6BED900F1F2F6 /* MedBook.xcdatamodeld in Sources */,
