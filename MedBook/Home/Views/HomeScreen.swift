@@ -21,7 +21,7 @@ struct HomeScreen: View {
                 .padding(.top, 20)
              
             SearchBar(text: $viewModel.searchText, isSearching: $viewModel.isSearching) {
-                viewModel.getBookListing(forTitle: viewModel.searchText, newSearch: true)
+                viewModel.getBookListing(forTitle: viewModel.searchText)
             }
             
             if viewModel.books.count > 0 {
@@ -118,7 +118,7 @@ extension HomeScreen {
             print(book.coverI)
             print(book.isBookmarked)
         }, loadMoreContent: {
-            viewModel.getBookListing(forTitle: viewModel.searchText)
+            viewModel.paginateBookListing()
         }, isLoading: $viewModel.isBooksLoading)
     }
 }

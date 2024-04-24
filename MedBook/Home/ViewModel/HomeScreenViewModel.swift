@@ -14,12 +14,19 @@ class HomeScreenViewModel: ObservableObject {
     @Published var selectedSegmentIndex = 0
     
     private var lastSearch: String = ""
-    @Published var searchText: String = "game" { //TEST
+    private var debounceTimer: Timer?
+    @Published var searchText: String = "game" {
         didSet {
-            // Check if searchText count is greater than 3
-            if searchText.count > 3 {
-                // Call your function here
-                self.getBookListing(forTitle: searchText)
+            // Cancel the previous debounce timer
+            debounceTimer?.invalidate()
+            debounceTimer = nil
+            
+            // Start a new debounce timer
+            debounceTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
+                // Check if searchText count is greater than 3
+                if self.searchText.count > 3 {
+                    self.getBookListing(forTitle: self.searchText)
+                }
             }
         }
     }
@@ -28,27 +35,33 @@ class HomeScreenViewModel: ObservableObject {
     @Published var isBooksLoading = false
     
     private let bookmarkManager = BookmarkManager()
-    private var paginationCounter = 0
+    private var paginationCounter = 1
     
-    func getBookListing(forTitle: String, newSearch: Bool = false) {
-        if lastSearch == forTitle && newSearch == true {
+    func getBookListing(forTitle: String) {
+        if lastSearch == forTitle {
             return
         } else {
             lastSearch = forTitle
         }
-        if newSearch {
-            paginationCounter = 0
-        }
-        isBooksLoading = true
         if forTitle.count < 3 {
-            isBooksLoading = false
             return
         }
+        isBooksLoading = true
+        paginationCounter = 1
+        let urlString = "https://openlibrary.org/search.json?title=\(searchText)&limit=\(10)"
+        fetchBooks(url: URL(string: urlString))
+    }
+    
+    func paginateBookListing() {
+        isBooksLoading = true
         paginationCounter += 1
-        let urlString = "https://openlibrary.org/search.json?title=\(forTitle)&limit=\(paginationCounter*10)"
-        
+        let urlString = "https://openlibrary.org/search.json?title=\(searchText)&limit=\(paginationCounter*10)"
+        fetchBooks(url: URL(string: urlString))
+    }
+    
+    func fetchBooks(url: URL?) {
         NetworkManager().getApiData(
-            forUrl: URL(string: urlString),
+            forUrl: url,
             resultType: BookListModel.self) { res in
                 switch res {
                 case .success(let bookListData):
