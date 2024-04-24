@@ -20,4 +20,8 @@ class LoginScreenViewModel: ObservableObject {
         let user = User(email: email, password: password)
         return userManager.isValidUser(forUser: user)
     }
+    
+    func markUserAsLoggedIn() {
+        UserDefaults.standard.set(true, forKey: "loginStatus")
+    }
 }

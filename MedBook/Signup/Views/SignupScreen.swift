@@ -106,6 +106,7 @@ struct SignupScreen: View {
     private func signUp() {
         viewModel.saveUserCreds()
         if viewModel.isEmailValid && viewModel.isPasswordValid {
+            viewModel.markUserAsLoggedIn()
             navigateToHome = true
         }
     }

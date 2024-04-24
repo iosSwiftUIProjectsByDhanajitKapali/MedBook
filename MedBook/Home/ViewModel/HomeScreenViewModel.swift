@@ -52,6 +52,10 @@ class HomeScreenViewModel: ObservableObject {
         let bookmarkedBooks = bookmarkManager.fetchAllBooks()
         print(bookmarkedBooks)
     }
+    
+    func markUserAsLoggedOut() {
+        UserDefaults.standard.set(false, forKey: "loginStatus")
+    }
 }
 
 

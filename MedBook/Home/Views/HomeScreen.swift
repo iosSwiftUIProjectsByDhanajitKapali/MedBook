@@ -88,6 +88,7 @@ extension HomeScreen {
     @ViewBuilder func logOutButton() -> some View {
         Button(action: {
             //Pop to LandingScreen
+            viewModel.markUserAsLoggedOut()
         }, label: {
             Image(systemName: "delete.left")
                 .foregroundStyle(.red)

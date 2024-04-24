@@ -86,6 +86,7 @@ struct LoginScreen: View {
     private func login() {
         let isValid = viewModel.isValidUser()
         if isValid {
+            viewModel.markUserAsLoggedIn()
             navigateToHome = true
         } else {
             showAlert = true

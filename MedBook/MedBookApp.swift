@@ -13,7 +13,11 @@ struct MedBookApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                LandingScreen()
+                if UserDefaults.standard.bool(forKey: "loginStatus") {
+                    HomeScreen()
+                } else {
+                    LandingScreen()
+                }
             }
             .preferredColorScheme(.light)
         }

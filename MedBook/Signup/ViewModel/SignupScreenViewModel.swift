@@ -58,6 +58,10 @@ class SignupScreenViewModel: ObservableObject {
         userManager.createUser(user: User(email: email, password: password))
     }
     
+    func markUserAsLoggedIn() {
+        UserDefaults.standard.set(true, forKey: "loginStatus")
+    }
+    
     // Create a validator service?
     private func validateEmail() {
         // Regular expression pattern for email validation
