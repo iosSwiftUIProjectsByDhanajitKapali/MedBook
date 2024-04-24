@@ -96,6 +96,8 @@ extension HomeScreenViewModel {
             // Check if searchText count is greater than 3
             if self.searchText.count > 3 {
                 self.getBookListing(forTitle: self.searchText)
+            } else {
+                self.books = []
             }
         }
     }

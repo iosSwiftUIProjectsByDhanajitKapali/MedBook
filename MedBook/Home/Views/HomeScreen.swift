@@ -13,15 +13,17 @@ struct HomeScreen: View {
     var body: some View {
         VStack(alignment: .leading) {
             title()
-                .background(.red)
                 .padding(.top, 20)
+                .padding(.leading, 15)
              
             SearchBar(text: $viewModel.searchText, isSearching: $viewModel.isSearching) {
                 viewModel.getBookListing(forTitle: viewModel.searchText)
             }
+            .padding(.horizontal, 8)
+            
             if viewModel.books.count > 0 {
                 sortSegement()
-                .padding(.horizontal, 40)
+                .padding(.horizontal, 20)
             }
             bookList()
             Spacer()

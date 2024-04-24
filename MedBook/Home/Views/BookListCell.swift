@@ -39,7 +39,6 @@ struct BookListCell: View {
                     Text("\(book.authorName.first ?? "")")
                         .foregroundStyle(.gray)
                         .font(.subheadline)
-                        .background(.red)
                     
                     Spacer()
                     
