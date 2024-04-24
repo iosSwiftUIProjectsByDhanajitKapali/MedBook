@@ -11,8 +11,6 @@ struct LoginScreen: View {
     @Environment(\.presentationMode) var presentationMode
     
     @StateObject private var viewModel = LoginScreenViewModel()
-    @State private var navigateToHome: Bool = false
-    @State private var showAlert: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -30,13 +28,19 @@ struct LoginScreen: View {
             loginButton()
         }
         .navigationBarBackButtonHidden(true)
-        .alert(isPresented: $showAlert) {
+        .alert(isPresented: $viewModel.showAlert) {
                 Alert(title: Text("Alert"), message: Text("Invalid user/password"), dismissButton: .default(Text("OK")))
             }
-        .navigationDestination(isPresented: $navigateToHome, destination: {
+        .navigationDestination(isPresented: $viewModel.navigateToHome, destination: {
             HomeScreen()
         })
     }
+    
+    
+}
+
+//MARK: - ViewBuilders
+extension LoginScreen {
     
     @ViewBuilder func backButton() -> some View {
         Button {
@@ -74,22 +78,12 @@ struct LoginScreen: View {
         HStack {
             Spacer()
             
-            Button(action: login) {
+            Button(action: viewModel.login) {
                 CustomButtonLabel(title: "Login ->")
             }
             .padding()
             
             Spacer()
-        }
-    }
-    
-    private func login() {
-        let isValid = viewModel.isValidUser()
-        if isValid {
-            viewModel.markUserAsLoggedIn()
-            navigateToHome = true
-        } else {
-            showAlert = true
         }
     }
 }

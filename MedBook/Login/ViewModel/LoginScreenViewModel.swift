@@ -9,12 +9,17 @@ import Foundation
 
 class LoginScreenViewModel: ObservableObject {
     
-    
-    @Published var email = "dhanajit30@gmail.com"
-    
-    @Published var password = "#Dhanajit30"
-    
+    //MARK: - Published data members
+    @Published var email = "dhanajit30@gmail.com" //TEST
+    @Published var password = "#Dhanajit30" //TEST
+    @Published var navigateToHome: Bool = false
+    @Published var showAlert: Bool = false
+
     private let userManager = UserManager()
+}
+
+//MARK: - Public methods
+extension LoginScreenViewModel {
     
     func isValidUser() -> Bool {
         let user = User(email: email, password: password)
@@ -23,5 +28,14 @@ class LoginScreenViewModel: ObservableObject {
     
     func markUserAsLoggedIn() {
         UserDefaults.standard.set(true, forKey: "loginStatus")
+    }
+    
+    func login() {
+        if isValidUser() {
+            markUserAsLoggedIn()
+            navigateToHome = true
+        } else {
+            showAlert = true
+        }
     }
 }
