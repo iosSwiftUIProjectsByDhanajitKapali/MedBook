@@ -8,7 +8,7 @@
 import Foundation
 
 struct BookListModel: Codable {
-    let books: [Book]
+    var books: [Book]
 
     enum CodingKeys: String, CodingKey {
         case books = "docs"

@@ -30,10 +30,9 @@ class HomeScreenViewModel: ObservableObject {
             forUrl: URL(string: urlString),
             resultType: BookListModel.self) { res in
                 switch res {
-                case .success(let bookList):
+                case .success(let bookListData):
                     DispatchQueue.main.async {
-                        self.books = bookList.books
-                        self.isBooksLoading = false
+                        self.updateBooksWithBookmarks(bookListData: bookListData)
                     }
                 case .failure(let failure):
                     print(failure)
@@ -53,6 +52,26 @@ class HomeScreenViewModel: ObservableObject {
         case .hits:
             books.sort { $0.ratingsCount > $1.ratingsCount }
         }
+    }
+    
+    private func updateBooksWithBookmarks(bookListData: BookListModel) {
+        var bookList = bookListData
+        // Get the bookmarked books
+        let bookmarkedBooks = self.bookmarkManager.fetchAllBooks() ?? []
+        
+        for index in 0..<bookList.books.count {
+            let book = bookList.books[index]
+            
+            // Check if the book's coverI exists in bookmarkedBooks
+            if let _ = bookmarkedBooks.first(where: { $0.coverI == book.coverI }) {
+                // If found, mark the book as bookmarked
+                bookList.books[index].isBookmarked = true
+            }
+        }
+
+        // Set self.books to bookList.books
+        self.books = bookList.books
+        self.isBooksLoading = false
     }
     
     func updateBookMarkedBookStatus(book: Book) {
