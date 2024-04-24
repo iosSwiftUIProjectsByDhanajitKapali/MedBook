@@ -39,11 +39,7 @@ class SignupScreenViewModel: ObservableObject {
         if let countries = countryRepository.getCountryList(), countries.count > 0 {
             DispatchQueue.main.async {
                 self.countryList = countries.compactMap { $0.countryName }.sorted()
-                let prevSelectedCountry = UserDefaults.standard.string(forKey: "selectedCountry")
-                if let index = self.countryList.firstIndex(where: { $0 == prevSelectedCountry }) {
-                    // index contains the first index where the value matches prevSelectedCountry
-                    self.selectedCountryIndex = index
-                }
+                self.setPrevSelectedCountry()
                 self.saveSelectedCountry()
             }
         } else {
@@ -55,11 +51,7 @@ class SignupScreenViewModel: ObservableObject {
                     self.countryRepository.saveCountryList(countries: countries)
                     DispatchQueue.main.async {
                         self.countryList = countryDataList.countries.map { $0.value.countryName }.sorted()
-                        let prevSelectedCountry = UserDefaults.standard.string(forKey: "selectedCountry")
-                        if let index = self.countryList.firstIndex(where: { $0 == prevSelectedCountry }) {
-                            // index contains the first index where the value matches prevSelectedCountry
-                            self.selectedCountryIndex = index
-                        }
+                        self.setPrevSelectedCountry()
                         self.saveSelectedCountry()
                         print(self.countryList.count)
                     }
@@ -78,6 +70,15 @@ class SignupScreenViewModel: ObservableObject {
         UserDefaults.standard.set(true, forKey: "loginStatus")
     }
     
+    
+    private func setPrevSelectedCountry() {
+        let prevSelectedCountry = UserDefaults.standard.string(forKey: "selectedCountry")
+        if let index = self.countryList.firstIndex(where: { $0 == prevSelectedCountry }) {
+            // index contains the first index where the value matches prevSelectedCountry
+            self.selectedCountryIndex = index
+        }
+    }
+    
     // Create a validator service?
     private func validateEmail() {
         // Regular expression pattern for email validation
@@ -94,6 +95,7 @@ class SignupScreenViewModel: ObservableObject {
     }
     
     private func saveSelectedCountry() {
+        print(countryList[selectedCountryIndex])
         UserDefaults.standard.set(countryList[selectedCountryIndex], forKey: "selectedCountry")
     }
     
