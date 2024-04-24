@@ -24,6 +24,8 @@
 		E71EAE7C2BD9178D00E61F31 /* LoginScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE7B2BD9178D00E61F31 /* LoginScreenViewModel.swift */; };
 		E71EAE7E2BD96D5900E61F31 /* CustomDisabledButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE7D2BD96D5900E61F31 /* CustomDisabledButtonLabel.swift */; };
 		E71EAE812BD96D8200E61F31 /* CustomButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE802BD96D8200E61F31 /* CustomButtonLabel.swift */; };
+		E71EAE832BD96EA800E61F31 /* BooksSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE822BD96EA800E61F31 /* BooksSortType.swift */; };
+		E71EAE852BD96EC400E61F31 /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE842BD96EC400E61F31 /* BookListView.swift */; };
 		E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */; };
 		E75CEE1E2BD6BED900F1F2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */; };
 		E75CEE212BD6BED900F1F2F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */; };
@@ -62,6 +64,8 @@
 		E71EAE7B2BD9178D00E61F31 /* LoginScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewModel.swift; sourceTree = "<group>"; };
 		E71EAE7D2BD96D5900E61F31 /* CustomDisabledButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDisabledButtonLabel.swift; sourceTree = "<group>"; };
 		E71EAE802BD96D8200E61F31 /* CustomButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonLabel.swift; sourceTree = "<group>"; };
+		E71EAE822BD96EA800E61F31 /* BooksSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksSortType.swift; sourceTree = "<group>"; };
+		E71EAE842BD96EC400E61F31 /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
 		E75CEE162BD6BED800F1F2F6 /* MedBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedBookApp.swift; sourceTree = "<group>"; };
 		E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				E75CEE352BD6D6EC00F1F2F6 /* HomeScreen.swift */,
+				E71EAE842BD96EC400E61F31 /* BookListView.swift */,
 				E76F60E22BD7DBDD003E7F0B /* BookListCell.swift */,
 			);
 			path = Views;
@@ -310,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				E76F60E02BD7C269003E7F0B /* BookListModel.swift */,
+				E71EAE822BD96EA800E61F31 /* BooksSortType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -450,6 +456,7 @@
 				E71EAE7E2BD96D5900E61F31 /* CustomDisabledButtonLabel.swift in Sources */,
 				E71EAE4E2BD8D85A00E61F31 /* CDCountry+CoreDataProperties.swift in Sources */,
 				E7B632252BD8360700B00270 /* SignupScreenViewModel.swift in Sources */,
+				E71EAE852BD96EC400E61F31 /* BookListView.swift in Sources */,
 				E75CEE232BD6BED900F1F2F6 /* Persistence.swift in Sources */,
 				E71EAE442BD8D06700E61F31 /* CountryList.swift in Sources */,
 				E75CEE362BD6D6EC00F1F2F6 /* HomeScreen.swift in Sources */,
@@ -468,6 +475,7 @@
 				E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */,
 				E71EAE512BD8D8EC00E61F31 /* CountryRepository.swift in Sources */,
 				E71EAE762BD8FEF600E61F31 /* BookmarkManager.swift in Sources */,
+				E71EAE832BD96EA800E61F31 /* BooksSortType.swift in Sources */,
 				E71EAE742BD8FBAA00E61F31 /* BookRepository.swift in Sources */,
 				E75CEE322BD6CA9600F1F2F6 /* SignupScreen.swift in Sources */,
 				E71EAE7C2BD9178D00E61F31 /* LoginScreenViewModel.swift in Sources */,

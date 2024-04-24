@@ -9,33 +9,28 @@ import Foundation
 
 class HomeScreenViewModel: ObservableObject {
     
+    //MARK: - Published data members
     @Published var sortedBooks: [Book] = BookListModel.mockBooks() //TEST
     @Published var books: [Book] = BookListModel.mockBooks() //TEST
     @Published var selectedSegmentIndex = 0
-    
-    private var lastSearch: String = ""
-    private var debounceTimer: Timer?
-    @Published var searchText: String = "game" {
+    @Published var selectedSegment: BooksSortType = .title
+    @Published var searchText: String = "game" { //Test
         didSet {
-            // Cancel the previous debounce timer
-            debounceTimer?.invalidate()
-            debounceTimer = nil
-            
-            // Start a new debounce timer
-            debounceTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
-                // Check if searchText count is greater than 3
-                if self.searchText.count > 3 {
-                    self.getBookListing(forTitle: self.searchText)
-                }
-            }
+            debounceSearch()
         }
     }
     @Published var isSearching: Bool = false
-    
     @Published var isBooksLoading = false
     
+    //MARK: - Private data members
+    private var lastSearch: String = ""
+    private var debounceTimer: Timer?
     private let bookmarkManager = BookmarkManager()
     private var paginationCounter = 1
+}
+
+//MARK: - Public methods
+extension HomeScreenViewModel {
     
     func getBookListing(forTitle: String) {
         if lastSearch == forTitle {
@@ -60,7 +55,48 @@ class HomeScreenViewModel: ObservableObject {
         fetchBooks(url: URL(string: urlString))
     }
     
-    func fetchBooks(url: URL?) {
+    func sortBooks(by sortType: BooksSortType) {
+        switch sortType {
+        case .title:
+            books.sort { $0.title > $1.title }
+        case .average:
+            books.sort { $0.ratingsAverage > $1.ratingsAverage }
+        case .hits:
+            books.sort { $0.ratingsCount > $1.ratingsCount }
+        }
+    }
+    
+    func updateBookMarkedBookStatus(book: Book) {
+        bookmarkManager.updateBookmarkStatus(forbook: book)
+        
+        let bookmarkedBooks = bookmarkManager.fetchAllBooks()
+        print(bookmarkedBooks)
+    }
+    
+    func markUserAsLoggedOut() {
+        UserDefaults.standard.set(false, forKey: "loginStatus")
+    }
+}
+
+
+//MARK: - Private methods
+extension HomeScreenViewModel {
+    
+    private func debounceSearch() {
+        // Cancel the previous debounce timer
+        debounceTimer?.invalidate()
+        debounceTimer = nil
+        
+        // Start a new debounce timer
+        debounceTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
+            // Check if searchText count is greater than 3
+            if self.searchText.count > 3 {
+                self.getBookListing(forTitle: self.searchText)
+            }
+        }
+    }
+    
+    private func fetchBooks(url: URL?) {
         NetworkManager().getApiData(
             forUrl: url,
             resultType: BookListModel.self) { res in
@@ -76,17 +112,6 @@ class HomeScreenViewModel: ObservableObject {
                     }
                 }
             }
-    }
-    
-    func sortBooks(by sortType: BooksSortType) {
-        switch sortType {
-        case .title:
-            books.sort { $0.title > $1.title }
-        case .average:
-            books.sort { $0.ratingsAverage > $1.ratingsAverage }
-        case .hits:
-            books.sort { $0.ratingsCount > $1.ratingsCount }
-        }
     }
     
     private func updateBooksWithBookmarks(bookListData: BookListModel) {
@@ -108,17 +133,4 @@ class HomeScreenViewModel: ObservableObject {
         self.books = bookList.books
         self.isBooksLoading = false
     }
-    
-    func updateBookMarkedBookStatus(book: Book) {
-        bookmarkManager.updateBookmarkStatus(forbook: book)
-        
-        let bookmarkedBooks = bookmarkManager.fetchAllBooks()
-        print(bookmarkedBooks)
-    }
-    
-    func markUserAsLoggedOut() {
-        UserDefaults.standard.set(false, forKey: "loginStatus")
-    }
 }
-
-
