@@ -40,15 +40,3 @@ struct NetworkManager{
         }.resume()
     }
 }
-
-enum ResponseStatus : Error{
-    case error(err : String)
-    case invalidResponse
-    case invalidData
-    case decodingError(err : String)
-}
-
-enum APIError: Error {
-    case invalidResponse
-    case decodingError
-}
