@@ -14,7 +14,7 @@ class SignupScreenViewModel: ObservableObject {
     
     @Published var email = "" {
         didSet {
-            email = email.lowercased()
+            //email = email.lowercased()
             validateEmail()
         }
     }
@@ -25,10 +25,11 @@ class SignupScreenViewModel: ObservableObject {
     }
     
     
-    @Published var isEmailValid = true
-    @Published var isPasswordValid = true
+    @Published var isEmailValid = false
+    @Published var isPasswordValid = false
     
     private let countryRepository = CountryDataRepository()
+    private let userManager = UserManager()
     
     func getCountries() {
         if let countries = countryRepository.getCountryList(), countries.count > 0 {
@@ -51,6 +52,10 @@ class SignupScreenViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    func saveUserCreds() {
+        userManager.createUser(user: User(email: email, password: password))
     }
     
     // Create a validator service?

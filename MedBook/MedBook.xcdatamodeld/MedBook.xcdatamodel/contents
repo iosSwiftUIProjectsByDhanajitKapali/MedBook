@@ -3,4 +3,9 @@
     <entity name="CDCountry" representedClassName="CDCountry" syncable="YES">
         <attribute name="countryName" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="CDUser" representedClassName="CDUser" syncable="YES">
+        <attribute name="email" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="password" attributeType="String"/>
+    </entity>
 </model>

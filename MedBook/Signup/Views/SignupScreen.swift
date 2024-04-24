@@ -11,6 +11,8 @@ struct SignupScreen: View {
     @Environment(\.presentationMode) var presentationMode
     
     @StateObject var viewModel = SignupScreenViewModel()
+    
+    @State private var navigateToHome: Bool = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -35,6 +37,9 @@ struct SignupScreen: View {
             
         }
         .navigationBarBackButtonHidden(true)
+        .navigationDestination(isPresented: $navigateToHome, destination: {
+            HomeScreen()
+        })
         .onAppear {
             viewModel.getCountries()
         }
@@ -93,15 +98,25 @@ struct SignupScreen: View {
     @ViewBuilder func goButton() -> some View {
         HStack {
             Spacer()
-            if viewModel.isEmailValid && viewModel.isPasswordValid {
-                NavigationLink(destination: HomeScreen()) {
+            
+            Button(action: signUp) {
+                if viewModel.isEmailValid && viewModel.isPasswordValid {
                     CustomButtonLabel(title: "Let's go ->")
+                } else {
+                    CustomDisabledButtonLabel(title: "Let's go ->")
                 }
-            } else {
-                CustomDisabledButtonLabel(title: "Let's go ->")
             }
+            .disabled(viewModel.isEmailValid && viewModel.isPasswordValid)
+            .padding()
             
             Spacer()
+        }
+    }
+    
+    private func signUp() {
+        viewModel.saveUserCreds()
+        if viewModel.isEmailValid && viewModel.isPasswordValid {
+            navigateToHome = true
         }
     }
 }

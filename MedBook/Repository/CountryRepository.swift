@@ -36,7 +36,7 @@ class CountryDataRepository: CountryRepository {
     
         let result = PersistentStorage.shared.fetchManagedObjects(managedObject: CDCountry.self)
         
-        //convert the result to [Employee] type
+        //convert the result to [Country] type
         var countries : [Country] = []
         result?.forEach({ (cdCountry) in
             countries.append(cdCountry.convertToCountry())
