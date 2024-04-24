@@ -42,10 +42,6 @@ struct BookListCell: View {
         }
         .transition(.fade(duration: 0.5)) // Fade Transition with duration
         .scaledToFit()
-        .cornerRadius(5)
-        .padding(4)
-        .border(Color.gray.opacity(0.6), width: 5)
-        .frame(width: 70, height: 70, alignment: .center)
         .cornerRadius(10)
         .padding(.leading, 10)
     }
