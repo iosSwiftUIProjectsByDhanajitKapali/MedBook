@@ -9,12 +9,20 @@ import Foundation
 
 class HomeScreenViewModel: ObservableObject {
     
-    @Published var sortedBooks: [Book] = BookListModel.mockBooks()
-    @Published var books: [Book] = BookListModel.mockBooks()
+    @Published var sortedBooks: [Book] = BookListModel.mockBooks() //TEST
+    @Published var books: [Book] = BookListModel.mockBooks() //TEST
     @Published var selectedSegmentIndex = 0
     
     private var lastSearch: String = ""
-    @Published var searchText: String = "game"
+    @Published var searchText: String = "game" { //TEST
+        didSet {
+            // Check if searchText count is greater than 3
+            if searchText.count > 3 {
+                // Call your function here
+                self.getBookListing(forTitle: searchText)
+            }
+        }
+    }
     @Published var isSearching: Bool = false
     
     @Published var isBooksLoading = false
