@@ -25,21 +25,9 @@ struct BookListView: View {
                         .listRowSeparator(.hidden)
                         .swipeActions(edge: .trailing) {
                             if books[i].isBookmarked {
-                                Button {
-                                    books[i].isBookmarked.toggle()
-                                    bookmarkedBook?(books[i])
-                                } label: {
-                                    Label("Remove", systemImage: "bookmark.slash")
-                                }
-                                .tint(.red)
+                                removeBookmarkButton(atIndex: i)
                             } else {
-                                Button {
-                                    books[i].isBookmarked.toggle()
-                                    bookmarkedBook?(books[i])
-                                } label: {
-                                    Label("Bookmark", systemImage: "bookmark")
-                                }
-                                .tint(.green)
+                                addBookmarkButton(atIndex: i)
                             }
                         }
                         .padding(.vertical, 20)
@@ -51,21 +39,45 @@ struct BookListView: View {
                 }
                 .listStyle(PlainListStyle())
             } header: {
-                
+                EmptyView()
             } footer: {
-                if isLoading {
-                    HStack {
-                        Spacer()
-                        Text("Loading...")
-                        Spacer()
-                    }
-                    .background(.red)
-                } else {
-                    EmptyView()
-                }
+                footerView()
             }
             
             
+        }
+    }
+    
+    @ViewBuilder func addBookmarkButton(atIndex: Int) -> some View {
+        Button {
+            books[atIndex].isBookmarked.toggle()
+            bookmarkedBook?(books[atIndex])
+        } label: {
+            Label("Bookmark", systemImage: "bookmark")
+        }
+        .tint(.green)
+    }
+    
+    @ViewBuilder func removeBookmarkButton(atIndex: Int) -> some View {
+        Button {
+            books[atIndex].isBookmarked.toggle()
+            bookmarkedBook?(books[atIndex])
+        } label: {
+            Label("Remove", systemImage: "bookmark.slash")
+        }
+        .tint(.red)
+    }
+    
+    @ViewBuilder func footerView() -> some View {
+        if isLoading {
+            HStack {
+                Spacer()
+                Text("Loading...")
+                Spacer()
+            }
+            .padding(.vertical, 5)
+        } else {
+            EmptyView()
         }
     }
 }

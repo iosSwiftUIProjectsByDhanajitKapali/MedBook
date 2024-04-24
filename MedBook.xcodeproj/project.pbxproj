@@ -29,6 +29,7 @@
 		E71EAE872BD9718700E61F31 /* EmailPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE862BD9718700E61F31 /* EmailPasswordView.swift */; };
 		E71EAE8C2BD9787D00E61F31 /* ResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE8B2BD9787D00E61F31 /* ResponseStatus.swift */; };
 		E71EAE8F2BD9789700E61F31 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE8E2BD9789700E61F31 /* APIError.swift */; };
+		E71EAEB12BD994BC00E61F31 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E71EAEB02BD994BC00E61F31 /* SDWebImageSwiftUI */; };
 		E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */; };
 		E75CEE1E2BD6BED900F1F2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */; };
 		E75CEE212BD6BED900F1F2F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */; };
@@ -96,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E71EAEB12BD994BC00E61F31 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +414,9 @@
 			dependencies = (
 			);
 			name = MedBook;
+			packageProductDependencies = (
+				E71EAEB02BD994BC00E61F31 /* SDWebImageSwiftUI */,
+			);
 			productName = MedBook;
 			productReference = E75CEE162BD6BED800F1F2F6 /* MedBook.app */;
 			productType = "com.apple.product-type.application";
@@ -440,6 +445,9 @@
 				Base,
 			);
 			mainGroup = E75CEE0D2BD6BED800F1F2F6;
+			packageReferences = (
+				E71EAEAF2BD994BC00E61F31 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = E75CEE172BD6BED800F1F2F6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -716,6 +724,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E71EAEAF2BD994BC00E61F31 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E71EAEB02BD994BC00E61F31 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E71EAEAF2BD994BC00E61F31 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E75CEE242BD6BED900F1F2F6 /* MedBook.xcdatamodeld */ = {
