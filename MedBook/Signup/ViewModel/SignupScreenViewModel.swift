@@ -32,9 +32,16 @@ class SignupScreenViewModel: ObservableObject {
     
     
     //MARK: - Private data members
-    private let countryRepository = CountryDataRepository()
-    private let userManager = UserManager()
+    private let countryRepository: CountryRepository
+    private let userManager: UserManagerProtocol
     
+    init (
+        userManager: UserManagerProtocol = UserManager(),
+        countryRepository: CountryRepository = CountryDataRepository()
+    ) {
+        self.userManager = userManager
+        self.countryRepository = countryRepository
+    }
 }
 
 

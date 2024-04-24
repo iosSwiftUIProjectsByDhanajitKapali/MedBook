@@ -15,7 +15,11 @@ class LoginScreenViewModel: ObservableObject {
     @Published var navigateToHome: Bool = false
     @Published var showAlert: Bool = false
 
-    private let userManager = UserManager()
+    private let userManager: UserManagerProtocol
+    
+    init(userManager: UserManagerProtocol = UserManager()) {
+        self.userManager = userManager
+    }
 }
 
 //MARK: - Public methods

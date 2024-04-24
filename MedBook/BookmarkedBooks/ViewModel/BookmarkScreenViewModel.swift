@@ -13,9 +13,10 @@ class BookmarkScreenViewModel: ObservableObject {
     @Published var books: [Book] = []
     
     //MARK:  Private data members
-    private let bookmarkManager = BookmarkManager()
+    private let bookmarkManager: BookmarkManagerProtocol
     
-    init() {
+    init(bookmarkManager: BookmarkManagerProtocol = BookmarkManager()) {
+        self.bookmarkManager = bookmarkManager
         updateBookmarkedBooks()
     }
 }

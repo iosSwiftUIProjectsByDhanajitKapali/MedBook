@@ -25,8 +25,12 @@ class HomeScreenViewModel: ObservableObject {
     //MARK: - Private data members
     private var lastSearch: String = ""
     private var debounceTimer: Timer?
-    private let bookmarkManager = BookmarkManager()
     private var paginationCounter = 1
+    private let bookmarkManager: BookmarkManagerProtocol
+    
+    init(bookmarkManager: BookmarkManagerProtocol = BookmarkManager()) {
+        self.bookmarkManager = bookmarkManager
+    }
 }
 
 //MARK: - Public methods

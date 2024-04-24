@@ -16,8 +16,6 @@ protocol CountryRepository {
 
 class CountryDataRepository: CountryRepository {
     func saveCountryList(countries: [Country]) {
-        
-        
         for country in countries {
             //create a new entity of CDCountry type
             let cdCountry = CDCountry(context: PersistentStorage.shared.context)
@@ -28,22 +26,15 @@ class CountryDataRepository: CountryRepository {
             //save the context
             PersistentStorage.shared.saveContext()
         }
-        
-        
     }
     
     func getCountryList() -> [Country]? {
-    
         let result = PersistentStorage.shared.fetchManagedObjects(managedObject: CDCountry.self)
-        
         //convert the result to [Country] type
         var countries : [Country] = []
         result?.forEach({ (cdCountry) in
             countries.append(cdCountry.convertToCountry())
         })
-        
         return countries
     }
-    
-    
 }

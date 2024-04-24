@@ -7,7 +7,13 @@
 
 import Foundation
 
-struct UserManager {
+protocol UserManagerProtocol {
+    func createUser(user: User)
+    func fetchAllUsers() -> [User]?
+    func isValidUser(forUser: User) -> Bool
+}
+
+struct UserManager: UserManagerProtocol {
     
     private let userRepo = UserDataRepository()
     

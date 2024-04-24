@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct BookmarkManager {
+protocol BookmarkManagerProtocol {
+    func updateBookmarkStatus(forbook: Book)
+    func fetchAllBooks() -> [Book]?
+}
+
+struct BookmarkManager: BookmarkManagerProtocol {
     
     private let bookRepo = BookDataRepository()
     
