@@ -14,12 +14,14 @@ class HomeScreenViewModel: ObservableObject {
     @Published var selectedSegmentIndex = 0
     
     private let bookmarkManager = BookmarkManager()
+    private var paginationCounter = 1
     
     func getBookListing(forTitle: String) {
         if forTitle.count < 3 {
             return
         }
-        let urlString = "https://openlibrary.org/search.json?title=\(forTitle)&limit=10"
+        paginationCounter += 1
+        let urlString = "https://openlibrary.org/search.json?title=\(forTitle)&limit=\(paginationCounter*10)"
         
         NetworkManager().getApiData(
             forUrl: URL(string: urlString),

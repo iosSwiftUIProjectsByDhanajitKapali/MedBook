@@ -127,6 +127,8 @@ extension HomeScreen {
             viewModel.updateBookMarkedBookStatus(book: book)
             print(book.coverI)
             print(book.isBookmarked)
+        }, loadMoreContent: {
+            viewModel.getBookListing(forTitle: searchText)
         })
             
 //        List {
@@ -146,6 +148,7 @@ struct BookListView: View {
     @Binding var books: [Book]
     
     var bookmarkedBook: ((Book) -> Void)? = nil
+    var loadMoreContent: (() -> Void)? = nil
     
     var body: some View {
         List {
@@ -174,6 +177,11 @@ struct BookListView: View {
                         }
                     }
                     .padding(.vertical, 20)
+                    .onAppear {
+                        if i+1 == books.count {
+                            loadMoreContent?()
+                        }
+                    }
             }
             .listStyle(PlainListStyle())
         }
