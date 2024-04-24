@@ -24,14 +24,19 @@ struct SignupScreen: View {
             welcomeTitle()
                 .padding(.leading, 10)
             
-            Spacer()
             emailPassword()
+                .padding(.top, 60)
+            
             Spacer()
             if $viewModel.countryList.count > 0 {
                 countrySelector()
                     .frame(height: 140)
                     .padding(.top, 10)
                     .padding(.bottom, 50)
+            } else {
+                Rectangle()
+                    .fill(Color.clear)
+                    .frame(height: 140)
             }
             goButton()
             
