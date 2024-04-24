@@ -68,4 +68,19 @@ final class PersistentStorage{
         }
         return nil
     }
+    
+    func saveCountriesToCoreData(_ countryNames: [String]) {
+            let context = persistentContainer.viewContext
+            context.perform {
+                countryNames.forEach { countryName in
+                    let country = Country(context: context)
+                    country.countryName = countryName
+                }
+                do {
+                    try context.save()
+                } catch {
+                    print("Error saving countries to CoreData: \(error)")
+                }
+            }
+        }
 }

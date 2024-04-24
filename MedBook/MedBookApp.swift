@@ -9,8 +9,7 @@ import SwiftUI
 
 @main
 struct MedBookApp: App {
-    let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {

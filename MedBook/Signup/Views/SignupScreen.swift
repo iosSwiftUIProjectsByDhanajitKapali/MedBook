@@ -36,7 +36,9 @@ struct SignupScreen: View {
         }
         .navigationBarBackButtonHidden(true)
         .onAppear {
-            viewModel.getCountries()
+            viewModel.getCountries { _ in 
+                
+            }
         }
     }
     
