@@ -79,7 +79,7 @@ extension HomeScreen {
     }
     
     @ViewBuilder func bookMarkButton() -> some View {
-        NavigationLink(destination: BookmarkedBooksScreen()) {
+        NavigationLink(destination: BookmarkScreen()) {
             Image(systemName: "bookmark.fill")
                 .foregroundStyle(.black)
         }

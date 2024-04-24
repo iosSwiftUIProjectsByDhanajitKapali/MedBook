@@ -20,6 +20,7 @@
 		E71EAE712BD8FB7B00E61F31 /* CDBook+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE6F2BD8FB7B00E61F31 /* CDBook+CoreDataProperties.swift */; };
 		E71EAE742BD8FBAA00E61F31 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE732BD8FBAA00E61F31 /* BookRepository.swift */; };
 		E71EAE762BD8FEF600E61F31 /* BookmarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE752BD8FEF600E61F31 /* BookmarkManager.swift */; };
+		E71EAE792BD9060B00E61F31 /* BookmarkScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE782BD9060B00E61F31 /* BookmarkScreenViewModel.swift */; };
 		E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */; };
 		E75CEE1E2BD6BED900F1F2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */; };
 		E75CEE212BD6BED900F1F2F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */; };
@@ -36,7 +37,7 @@
 		E76F60E12BD7C269003E7F0B /* BookListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F60E02BD7C269003E7F0B /* BookListModel.swift */; };
 		E76F60E32BD7DBDD003E7F0B /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F60E22BD7DBDD003E7F0B /* BookListCell.swift */; };
 		E76F60E52BD7DBFD003E7F0B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F60E42BD7DBFD003E7F0B /* SearchBar.swift */; };
-		E7B632222BD8247900B00270 /* BookmarkedBooksScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B632212BD8247900B00270 /* BookmarkedBooksScreen.swift */; };
+		E7B632222BD8247900B00270 /* BookmarkScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B632212BD8247900B00270 /* BookmarkScreen.swift */; };
 		E7B632252BD8360700B00270 /* SignupScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B632242BD8360700B00270 /* SignupScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		E71EAE6F2BD8FB7B00E61F31 /* CDBook+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDBook+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E71EAE732BD8FBAA00E61F31 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		E71EAE752BD8FEF600E61F31 /* BookmarkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkManager.swift; sourceTree = "<group>"; };
+		E71EAE782BD9060B00E61F31 /* BookmarkScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkScreenViewModel.swift; sourceTree = "<group>"; };
 		E75CEE162BD6BED800F1F2F6 /* MedBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedBookApp.swift; sourceTree = "<group>"; };
 		E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,7 +73,7 @@
 		E76F60E02BD7C269003E7F0B /* BookListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListModel.swift; sourceTree = "<group>"; };
 		E76F60E22BD7DBDD003E7F0B /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
 		E76F60E42BD7DBFD003E7F0B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		E7B632212BD8247900B00270 /* BookmarkedBooksScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedBooksScreen.swift; sourceTree = "<group>"; };
+		E7B632212BD8247900B00270 /* BookmarkScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkScreen.swift; sourceTree = "<group>"; };
 		E7B632242BD8360700B00270 /* SignupScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +151,14 @@
 				E71EAE6F2BD8FB7B00E61F31 /* CDBook+CoreDataProperties.swift */,
 			);
 			path = CDBook;
+			sourceTree = "<group>";
+		};
+		E71EAE772BD905EC00E61F31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E71EAE782BD9060B00E61F31 /* BookmarkScreenViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E75CEE0D2BD6BED800F1F2F6 = {
@@ -311,6 +321,7 @@
 		E7B6321F2BD8242300B00270 /* BookmarkedBooks */ = {
 			isa = PBXGroup;
 			children = (
+				E71EAE772BD905EC00E61F31 /* ViewModel */,
 				E7B632202BD8243B00B00270 /* Views */,
 			);
 			path = BookmarkedBooks;
@@ -319,7 +330,7 @@
 		E7B632202BD8243B00B00270 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E7B632212BD8247900B00270 /* BookmarkedBooksScreen.swift */,
+				E7B632212BD8247900B00270 /* BookmarkScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -418,9 +429,10 @@
 				E75CEE362BD6D6EC00F1F2F6 /* HomeScreen.swift in Sources */,
 				E71EAE702BD8FB7B00E61F31 /* CDBook+CoreDataClass.swift in Sources */,
 				E71EAE5A2BD8EAE900E61F31 /* UserRepository.swift in Sources */,
+				E71EAE792BD9060B00E61F31 /* BookmarkScreenViewModel.swift in Sources */,
 				E71EAE462BD8D15E00E61F31 /* PersistentStorage.swift in Sources */,
 				E75CEE262BD6BED900F1F2F6 /* MedBook.xcdatamodeld in Sources */,
-				E7B632222BD8247900B00270 /* BookmarkedBooksScreen.swift in Sources */,
+				E7B632222BD8247900B00270 /* BookmarkScreen.swift in Sources */,
 				E71EAE692BD8F7EB00E61F31 /* CDUser+CoreDataProperties.swift in Sources */,
 				E71EAE652BD8F25400E61F31 /* UserManager.swift in Sources */,
 				E71EAE682BD8F7EB00E61F31 /* CDUser+CoreDataClass.swift in Sources */,

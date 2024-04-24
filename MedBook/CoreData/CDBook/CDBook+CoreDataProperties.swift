@@ -29,7 +29,8 @@ extension CDBook {
             ratingsAverage: self.ratingsAverage,
             ratingsCount: Int(self.ratingsCount),
             authorName: [self.authorName],
-            coverI: Int(self.coverI)
+            coverI: Int(self.coverI),
+            isBookmarked: true
         )
     }
 
