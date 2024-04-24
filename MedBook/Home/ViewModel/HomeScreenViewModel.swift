@@ -47,6 +47,7 @@ class HomeScreenViewModel: ObservableObject {
             return
         }
         isBooksLoading = true
+        books = []  // Reset the search results
         paginationCounter = 1
         let urlString = "https://openlibrary.org/search.json?title=\(searchText)&limit=\(10)"
         fetchBooks(url: URL(string: urlString))
