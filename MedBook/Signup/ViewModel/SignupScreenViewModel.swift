@@ -12,13 +12,13 @@ class SignupScreenViewModel: ObservableObject {
     @Published var countryList: [String] = []
     @Published var selectedCountry = 0
     
-    @Published var email = "" {
+    @Published var email = "dhanajit30@gmail.com" {
         didSet {
             //email = email.lowercased()
             validateEmail()
         }
     }
-    @Published var password = "" {
+    @Published var password = "#Dhanajit30" {
         didSet {
             validatePassword()
         }

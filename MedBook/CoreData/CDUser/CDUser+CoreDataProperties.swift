@@ -18,13 +18,11 @@ extension CDUser {
 
     @NSManaged public var email: String?
     @NSManaged public var password: String?
-    @NSManaged public var id: UUID?
     
     //custom functions
     func convertToUser() -> User {
-        return User(email: self.email, password: self.password, id: self.id)
+        return User(email: self.email, password: self.password)
     }
-
 }
 
 extension CDUser : Identifiable {

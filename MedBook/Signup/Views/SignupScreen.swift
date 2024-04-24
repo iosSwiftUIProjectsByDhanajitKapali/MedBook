@@ -106,7 +106,7 @@ struct SignupScreen: View {
                     CustomDisabledButtonLabel(title: "Let's go ->")
                 }
             }
-            .disabled(viewModel.isEmailValid && viewModel.isPasswordValid)
+            .disabled(!viewModel.isEmailValid && !viewModel.isPasswordValid)
             .padding()
             
             Spacer()

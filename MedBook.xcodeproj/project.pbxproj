@@ -13,9 +13,9 @@
 		E71EAE4E2BD8D85A00E61F31 /* CDCountry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE4C2BD8D85A00E61F31 /* CDCountry+CoreDataProperties.swift */; };
 		E71EAE512BD8D8EC00E61F31 /* CountryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE502BD8D8EC00E61F31 /* CountryRepository.swift */; };
 		E71EAE5A2BD8EAE900E61F31 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE592BD8EAE900E61F31 /* UserRepository.swift */; };
-		E71EAE612BD8ECBA00E61F31 /* CDUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE5F2BD8ECBA00E61F31 /* CDUser+CoreDataClass.swift */; };
-		E71EAE622BD8ECBA00E61F31 /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE602BD8ECBA00E61F31 /* CDUser+CoreDataProperties.swift */; };
 		E71EAE652BD8F25400E61F31 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE642BD8F25400E61F31 /* UserManager.swift */; };
+		E71EAE682BD8F7EB00E61F31 /* CDUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE662BD8F7EB00E61F31 /* CDUser+CoreDataClass.swift */; };
+		E71EAE692BD8F7EB00E61F31 /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE672BD8F7EB00E61F31 /* CDUser+CoreDataProperties.swift */; };
 		E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */; };
 		E75CEE1E2BD6BED900F1F2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */; };
 		E75CEE212BD6BED900F1F2F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */; };
@@ -43,9 +43,9 @@
 		E71EAE4C2BD8D85A00E61F31 /* CDCountry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCountry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E71EAE502BD8D8EC00E61F31 /* CountryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepository.swift; sourceTree = "<group>"; };
 		E71EAE592BD8EAE900E61F31 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
-		E71EAE5F2BD8ECBA00E61F31 /* CDUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E71EAE602BD8ECBA00E61F31 /* CDUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E71EAE642BD8F25400E61F31 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		E71EAE662BD8F7EB00E61F31 /* CDUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E71EAE672BD8F7EB00E61F31 /* CDUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E75CEE162BD6BED800F1F2F6 /* MedBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedBookApp.swift; sourceTree = "<group>"; };
 		E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,8 +117,8 @@
 		E71EAE582BD8EAC600E61F31 /* CDUser */ = {
 			isa = PBXGroup;
 			children = (
-				E71EAE5F2BD8ECBA00E61F31 /* CDUser+CoreDataClass.swift */,
-				E71EAE602BD8ECBA00E61F31 /* CDUser+CoreDataProperties.swift */,
+				E71EAE662BD8F7EB00E61F31 /* CDUser+CoreDataClass.swift */,
+				E71EAE672BD8F7EB00E61F31 /* CDUser+CoreDataProperties.swift */,
 			);
 			path = CDUser;
 			sourceTree = "<group>";
@@ -385,7 +385,6 @@
 				E76F60DB2BD7C155003E7F0B /* NetworkManager.swift in Sources */,
 				E76F60DF2BD7C1A9003E7F0B /* Constants.swift in Sources */,
 				E76F60E12BD7C269003E7F0B /* BookListModel.swift in Sources */,
-				E71EAE622BD8ECBA00E61F31 /* CDUser+CoreDataProperties.swift in Sources */,
 				E75CEE342BD6CAC300F1F2F6 /* LoginSceen.swift in Sources */,
 				E76F60E32BD7DBDD003E7F0B /* BookListCell.swift in Sources */,
 				E76F60DD2BD7C193003E7F0B /* Constants+NetworkManager.swift in Sources */,
@@ -400,13 +399,14 @@
 				E71EAE462BD8D15E00E61F31 /* PersistentStorage.swift in Sources */,
 				E75CEE262BD6BED900F1F2F6 /* MedBook.xcdatamodeld in Sources */,
 				E7B632222BD8247900B00270 /* BookmarkedBooksScreen.swift in Sources */,
+				E71EAE692BD8F7EB00E61F31 /* CDUser+CoreDataProperties.swift in Sources */,
 				E71EAE652BD8F25400E61F31 /* UserManager.swift in Sources */,
+				E71EAE682BD8F7EB00E61F31 /* CDUser+CoreDataClass.swift in Sources */,
 				E71EAE4D2BD8D85A00E61F31 /* CDCountry+CoreDataClass.swift in Sources */,
 				E75CEE302BD6CA6E00F1F2F6 /* LandingScreen.swift in Sources */,
 				E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */,
 				E71EAE512BD8D8EC00E61F31 /* CountryRepository.swift in Sources */,
 				E75CEE322BD6CA9600F1F2F6 /* SignupScreen.swift in Sources */,
-				E71EAE612BD8ECBA00E61F31 /* CDUser+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,7 +26,6 @@ class UserDataRepository: UserRepository {
         let cdUser = CDUser(context: PersistentStorage.shared.context)
         
         // Fill the data of the entity with the data from our model
-        cdUser.id = user.id
         cdUser.email = user.email
         cdUser.password = user.password
         
@@ -67,5 +66,4 @@ class UserDataRepository: UserRepository {
 
 struct User {
     var email, password: String?
-    var id: UUID?
 }
