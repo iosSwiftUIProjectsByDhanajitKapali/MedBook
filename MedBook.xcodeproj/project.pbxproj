@@ -22,6 +22,8 @@
 		E71EAE762BD8FEF600E61F31 /* BookmarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE752BD8FEF600E61F31 /* BookmarkManager.swift */; };
 		E71EAE792BD9060B00E61F31 /* BookmarkScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE782BD9060B00E61F31 /* BookmarkScreenViewModel.swift */; };
 		E71EAE7C2BD9178D00E61F31 /* LoginScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE7B2BD9178D00E61F31 /* LoginScreenViewModel.swift */; };
+		E71EAE7E2BD96D5900E61F31 /* CustomDisabledButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE7D2BD96D5900E61F31 /* CustomDisabledButtonLabel.swift */; };
+		E71EAE812BD96D8200E61F31 /* CustomButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE802BD96D8200E61F31 /* CustomButtonLabel.swift */; };
 		E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */; };
 		E75CEE1E2BD6BED900F1F2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */; };
 		E75CEE212BD6BED900F1F2F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		E71EAE752BD8FEF600E61F31 /* BookmarkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkManager.swift; sourceTree = "<group>"; };
 		E71EAE782BD9060B00E61F31 /* BookmarkScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkScreenViewModel.swift; sourceTree = "<group>"; };
 		E71EAE7B2BD9178D00E61F31 /* LoginScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewModel.swift; sourceTree = "<group>"; };
+		E71EAE7D2BD96D5900E61F31 /* CustomDisabledButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDisabledButtonLabel.swift; sourceTree = "<group>"; };
+		E71EAE802BD96D8200E61F31 /* CustomButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonLabel.swift; sourceTree = "<group>"; };
 		E75CEE162BD6BED800F1F2F6 /* MedBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedBookApp.swift; sourceTree = "<group>"; };
 		E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,6 +173,13 @@
 				E71EAE7B2BD9178D00E61F31 /* LoginScreenViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E71EAE7F2BD96D7B00E61F31 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		E75CEE0D2BD6BED800F1F2F6 = {
@@ -315,6 +326,7 @@
 		E7B6321D2BD8114E00B00270 /* ReusableComponents */ = {
 			isa = PBXGroup;
 			children = (
+				E71EAE7F2BD96D7B00E61F31 /* New Group */,
 				E76F60DE2BD7C1A9003E7F0B /* Constants.swift */,
 				E7B6321E2BD8116A00B00270 /* Views */,
 			);
@@ -325,6 +337,8 @@
 			isa = PBXGroup;
 			children = (
 				E76F60E42BD7DBFD003E7F0B /* SearchBar.swift */,
+				E71EAE7D2BD96D5900E61F31 /* CustomDisabledButtonLabel.swift */,
+				E71EAE802BD96D8200E61F31 /* CustomButtonLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,8 +346,8 @@
 		E7B6321F2BD8242300B00270 /* BookmarkedBooks */ = {
 			isa = PBXGroup;
 			children = (
-				E71EAE772BD905EC00E61F31 /* ViewModel */,
 				E7B632202BD8243B00B00270 /* Views */,
+				E71EAE772BD905EC00E61F31 /* ViewModel */,
 			);
 			path = BookmarkedBooks;
 			sourceTree = "<group>";
@@ -433,6 +447,7 @@
 				E76F60D92BD7C0FA003E7F0B /* HomeScreenViewModel.swift in Sources */,
 				E76F60E52BD7DBFD003E7F0B /* SearchBar.swift in Sources */,
 				E71EAE712BD8FB7B00E61F31 /* CDBook+CoreDataProperties.swift in Sources */,
+				E71EAE7E2BD96D5900E61F31 /* CustomDisabledButtonLabel.swift in Sources */,
 				E71EAE4E2BD8D85A00E61F31 /* CDCountry+CoreDataProperties.swift in Sources */,
 				E7B632252BD8360700B00270 /* SignupScreenViewModel.swift in Sources */,
 				E75CEE232BD6BED900F1F2F6 /* Persistence.swift in Sources */,
@@ -449,6 +464,7 @@
 				E71EAE682BD8F7EB00E61F31 /* CDUser+CoreDataClass.swift in Sources */,
 				E71EAE4D2BD8D85A00E61F31 /* CDCountry+CoreDataClass.swift in Sources */,
 				E75CEE302BD6CA6E00F1F2F6 /* LandingScreen.swift in Sources */,
+				E71EAE812BD96D8200E61F31 /* CustomButtonLabel.swift in Sources */,
 				E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */,
 				E71EAE512BD8D8EC00E61F31 /* CountryRepository.swift in Sources */,
 				E71EAE762BD8FEF600E61F31 /* BookmarkManager.swift in Sources */,

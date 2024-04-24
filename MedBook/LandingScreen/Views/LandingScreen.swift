@@ -6,33 +6,16 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct LandingScreen: View {
     
     var body: some View {
         VStack {
-            
             Spacer()
-            Image("onlineDoctor")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding()
+            imageBanner()
             Spacer()
-            
-            HStack {
-                Spacer()
-                
-                NavigationLink(value: "Signup") {
-                    CustomButtonLabel(title: "Signup")
-                }
-                .padding(.trailing, 10)
-                NavigationLink(value: "Login") {
-                    CustomButtonLabel(title: "Login   ")
-                }
-                Spacer()
-            }
-            .padding(.bottom, 20)
+            signupLoginButtons()
+                .padding(.bottom, 20)
         }
         .navigationTitle("MedBook")
         .navigationDestination(for: String.self) { dest in
@@ -45,66 +28,35 @@ struct LandingScreen: View {
     }
 }
 
-
-
-
-#Preview {
-    NavigationStack {
-        LandingScreen()
+//MARK: - ViewBuilders
+extension LandingScreen {
+    
+    @ViewBuilder func imageBanner() -> some View {
+        Image("onlineDoctor")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .padding()
     }
-}
-
-struct CustomButton: View {
     
-    let title: String
-    var buttonTapped: () -> Void
-    
-    var body: some View {
-        Button(action: {
-            buttonTapped()
-        }) {
-            Text(title)
-                .fontWeight(.medium)
-                .padding()
-                .foregroundColor(.black)
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.black, lineWidth: 2)
-                )
+    @ViewBuilder func signupLoginButtons() -> some View {
+        HStack {
+            Spacer()
+            
+            NavigationLink(value: "Signup") {
+                CustomButtonLabel(title: "Signup")
+            }
+            .padding(.trailing, 10)
+            NavigationLink(value: "Login") {
+                CustomButtonLabel(title: "Login   ")
+            }
+            Spacer()
         }
     }
 }
 
 
-struct CustomDisabledButtonLabel: View {
-    
-    let title: String
-    
-    var body: some View {
-        Text(title)
-            .fontWeight(.medium)
-            .padding()
-            .foregroundColor(.gray)
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.gray, lineWidth: 2)
-            )
-    }
-}
-
-
-struct CustomButtonLabel: View {
-    
-    let title: String
-    
-    var body: some View {
-        Text(title)
-            .fontWeight(.medium)
-            .padding()
-            .foregroundColor(.black)
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.black, lineWidth: 2)
-            )
+#Preview {
+    NavigationStack {
+        LandingScreen()
     }
 }

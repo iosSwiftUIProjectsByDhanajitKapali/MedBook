@@ -14,18 +14,22 @@ struct BookmarkScreen: View {
     var body: some View {
         VStack {
             if viewModel.books.count > 0 {
-                BookListView(
-                    books: $viewModel.books,
-                    bookmarkedBook: { book in
-                        viewModel.updateBookMarkedBookStatus(book: book)
-                    },
-                    isLoading: .constant(false)
-                )
+                bookList()
             } else {
                 Text("No Bookmars")
             }
         }
         .navigationTitle("Bookmark")
+    }
+    
+    @ViewBuilder func bookList() -> some View {
+        BookListView(
+            books: $viewModel.books,
+            bookmarkedBook: { book in
+                viewModel.updateBookMarkedBookStatus(book: book)
+            },
+            isLoading: .constant(false)
+        )
     }
 }
 
