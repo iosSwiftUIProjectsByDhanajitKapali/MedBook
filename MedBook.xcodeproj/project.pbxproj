@@ -16,6 +16,10 @@
 		E71EAE652BD8F25400E61F31 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE642BD8F25400E61F31 /* UserManager.swift */; };
 		E71EAE682BD8F7EB00E61F31 /* CDUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE662BD8F7EB00E61F31 /* CDUser+CoreDataClass.swift */; };
 		E71EAE692BD8F7EB00E61F31 /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE672BD8F7EB00E61F31 /* CDUser+CoreDataProperties.swift */; };
+		E71EAE702BD8FB7B00E61F31 /* CDBook+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE6E2BD8FB7B00E61F31 /* CDBook+CoreDataClass.swift */; };
+		E71EAE712BD8FB7B00E61F31 /* CDBook+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE6F2BD8FB7B00E61F31 /* CDBook+CoreDataProperties.swift */; };
+		E71EAE742BD8FBAA00E61F31 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE732BD8FBAA00E61F31 /* BookRepository.swift */; };
+		E71EAE762BD8FEF600E61F31 /* BookmarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE752BD8FEF600E61F31 /* BookmarkManager.swift */; };
 		E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */; };
 		E75CEE1E2BD6BED900F1F2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */; };
 		E75CEE212BD6BED900F1F2F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */; };
@@ -46,6 +50,10 @@
 		E71EAE642BD8F25400E61F31 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		E71EAE662BD8F7EB00E61F31 /* CDUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E71EAE672BD8F7EB00E61F31 /* CDUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E71EAE6E2BD8FB7B00E61F31 /* CDBook+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDBook+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E71EAE6F2BD8FB7B00E61F31 /* CDBook+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDBook+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E71EAE732BD8FBAA00E61F31 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
+		E71EAE752BD8FEF600E61F31 /* BookmarkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkManager.swift; sourceTree = "<group>"; };
 		E75CEE162BD6BED800F1F2F6 /* MedBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedBookApp.swift; sourceTree = "<group>"; };
 		E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +99,7 @@
 			children = (
 				E71EAE502BD8D8EC00E61F31 /* CountryRepository.swift */,
 				E71EAE592BD8EAE900E61F31 /* UserRepository.swift */,
+				E71EAE732BD8FBAA00E61F31 /* BookRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -101,6 +110,7 @@
 				E71EAE452BD8D15E00E61F31 /* PersistentStorage.swift */,
 				E71EAE582BD8EAC600E61F31 /* CDUser */,
 				E71EAE572BD8EABB00E61F31 /* CDCountry */,
+				E71EAE722BD8FB9000E61F31 /* CDBook */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -127,8 +137,18 @@
 			isa = PBXGroup;
 			children = (
 				E71EAE642BD8F25400E61F31 /* UserManager.swift */,
+				E71EAE752BD8FEF600E61F31 /* BookmarkManager.swift */,
 			);
 			name = UserRepoManager;
+			sourceTree = "<group>";
+		};
+		E71EAE722BD8FB9000E61F31 /* CDBook */ = {
+			isa = PBXGroup;
+			children = (
+				E71EAE6E2BD8FB7B00E61F31 /* CDBook+CoreDataClass.swift */,
+				E71EAE6F2BD8FB7B00E61F31 /* CDBook+CoreDataProperties.swift */,
+			);
+			path = CDBook;
 			sourceTree = "<group>";
 		};
 		E75CEE0D2BD6BED800F1F2F6 = {
@@ -390,11 +410,13 @@
 				E76F60DD2BD7C193003E7F0B /* Constants+NetworkManager.swift in Sources */,
 				E76F60D92BD7C0FA003E7F0B /* HomeScreenViewModel.swift in Sources */,
 				E76F60E52BD7DBFD003E7F0B /* SearchBar.swift in Sources */,
+				E71EAE712BD8FB7B00E61F31 /* CDBook+CoreDataProperties.swift in Sources */,
 				E71EAE4E2BD8D85A00E61F31 /* CDCountry+CoreDataProperties.swift in Sources */,
 				E7B632252BD8360700B00270 /* SignupScreenViewModel.swift in Sources */,
 				E75CEE232BD6BED900F1F2F6 /* Persistence.swift in Sources */,
 				E71EAE442BD8D06700E61F31 /* CountryList.swift in Sources */,
 				E75CEE362BD6D6EC00F1F2F6 /* HomeScreen.swift in Sources */,
+				E71EAE702BD8FB7B00E61F31 /* CDBook+CoreDataClass.swift in Sources */,
 				E71EAE5A2BD8EAE900E61F31 /* UserRepository.swift in Sources */,
 				E71EAE462BD8D15E00E61F31 /* PersistentStorage.swift in Sources */,
 				E75CEE262BD6BED900F1F2F6 /* MedBook.xcdatamodeld in Sources */,
@@ -406,6 +428,8 @@
 				E75CEE302BD6CA6E00F1F2F6 /* LandingScreen.swift in Sources */,
 				E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */,
 				E71EAE512BD8D8EC00E61F31 /* CountryRepository.swift in Sources */,
+				E71EAE762BD8FEF600E61F31 /* BookmarkManager.swift in Sources */,
+				E71EAE742BD8FBAA00E61F31 /* BookRepository.swift in Sources */,
 				E75CEE322BD6CA9600F1F2F6 /* SignupScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

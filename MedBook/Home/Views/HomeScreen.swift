@@ -14,9 +14,7 @@ struct HomeScreen: View {
     @State var searchText: String = "game"
     @State var isSearching: Bool = false
     
-    //@State private var selectedSegmentIndex = 0
     @State private var selectedSegment: BooksSortType = .title
-    private let segments = ["Title", "Average", "Hits"]
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -81,12 +79,10 @@ extension HomeScreen {
     }
     
     @ViewBuilder func bookMarkButton() -> some View {
-        Button(action: {
-            
-        }, label: {
+        NavigationLink(destination: BookmarkedBooksScreen()) {
             Image(systemName: "bookmark.fill")
                 .foregroundStyle(.black)
-        })
+        }
     }
     
     @ViewBuilder func logOutButton() -> some View {
@@ -127,7 +123,9 @@ extension HomeScreen {
 //        }
             
         BookListView(books: $viewModel.books, bookmarkedBook: { book in
+            viewModel.updateBookMarkedBookStatus(book: book)
             print(book.coverI)
+            print(book.isBookmarked)
         })
             
 //        List {

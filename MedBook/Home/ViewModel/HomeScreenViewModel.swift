@@ -13,6 +13,8 @@ class HomeScreenViewModel: ObservableObject {
     @Published var books: [Book] = BookListModel.mockBooks()
     @Published var selectedSegmentIndex = 0
     
+    private let bookmarkManager = BookmarkManager()
+    
     func getBookListing(forTitle: String) {
         if forTitle.count < 3 {
             return
@@ -42,6 +44,13 @@ class HomeScreenViewModel: ObservableObject {
         case .hits:
             books.sort { $0.ratingsCount > $1.ratingsCount }
         }
+    }
+    
+    func updateBookMarkedBookStatus(book: Book) {
+        bookmarkManager.updateBookmarkStatus(forbook: book)
+        
+        let bookmarkedBooks = bookmarkManager.fetchAllBooks()
+        print(bookmarkedBooks)
     }
 }
 
