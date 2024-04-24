@@ -58,19 +58,3 @@ class SignupScreenViewModel: ObservableObject {
     }
     
 }
-
-import Foundation
-
-// MARK: - Welcome
-struct CountryList: Codable {
-    let countries: [String: Datum]
-    
-    enum CodingKeys: String, CodingKey {
-        case countries = "data"
-    }
-}
-
-// MARK: - Datum
-struct Datum: Codable {
-    let country: String
-}

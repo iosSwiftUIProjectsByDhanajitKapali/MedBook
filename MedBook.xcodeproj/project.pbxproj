@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E71EAE442BD8D06700E61F31 /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE432BD8D06700E61F31 /* CountryList.swift */; };
+		E71EAE462BD8D15E00E61F31 /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE452BD8D15E00E61F31 /* PersistentStorage.swift */; };
 		E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */; };
 		E75CEE1E2BD6BED900F1F2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */; };
 		E75CEE212BD6BED900F1F2F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E71EAE432BD8D06700E61F31 /* CountryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryList.swift; sourceTree = "<group>"; };
+		E71EAE452BD8D15E00E61F31 /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
 		E75CEE162BD6BED800F1F2F6 /* MedBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedBookApp.swift; sourceTree = "<group>"; };
 		E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E71EAE422BD8D04C00E61F31 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E71EAE432BD8D06700E61F31 /* CountryList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E75CEE0D2BD6BED800F1F2F6 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +103,7 @@
 				E75CEE222BD6BED900F1F2F6 /* Persistence.swift */,
 				E75CEE242BD6BED900F1F2F6 /* MedBook.xcdatamodeld */,
 				E75CEE1F2BD6BED900F1F2F6 /* Preview Content */,
+				E71EAE452BD8D15E00E61F31 /* PersistentStorage.swift */,
 			);
 			path = MedBook;
 			sourceTree = "<group>";
@@ -141,6 +154,7 @@
 		E7B632162BD8108F00B00270 /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				E71EAE422BD8D04C00E61F31 /* Models */,
 				E7B632192BD810A500B00270 /* Views */,
 				E7B632232BD835ED00B00270 /* ViewModel */,
 			);
@@ -317,7 +331,9 @@
 				E76F60E52BD7DBFD003E7F0B /* SearchBar.swift in Sources */,
 				E7B632252BD8360700B00270 /* SignupScreenViewModel.swift in Sources */,
 				E75CEE232BD6BED900F1F2F6 /* Persistence.swift in Sources */,
+				E71EAE442BD8D06700E61F31 /* CountryList.swift in Sources */,
 				E75CEE362BD6D6EC00F1F2F6 /* HomeScreen.swift in Sources */,
+				E71EAE462BD8D15E00E61F31 /* PersistentStorage.swift in Sources */,
 				E75CEE262BD6BED900F1F2F6 /* MedBook.xcdatamodeld in Sources */,
 				E7B632222BD8247900B00270 /* BookmarkedBooksScreen.swift in Sources */,
 				E75CEE302BD6CA6E00F1F2F6 /* LandingScreen.swift in Sources */,
