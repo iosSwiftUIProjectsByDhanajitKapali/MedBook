@@ -73,7 +73,7 @@ final class PersistentStorage{
             let context = persistentContainer.viewContext
             context.perform {
                 countryNames.forEach { countryName in
-                    let country = Country(context: context)
+                    let country = CDCountry(context: context)
                     country.countryName = countryName
                 }
                 do {

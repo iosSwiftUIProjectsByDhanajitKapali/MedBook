@@ -31,7 +31,7 @@ class SignupScreenViewModel: ObservableObject {
     private let persistentStorage = PersistentStorage.shared
     
     func getCountries(completion: @escaping ([String]) -> Void) {
-        if let countries = persistentStorage.fetchManagedObjects(managedObject: Country.self), !countries.isEmpty {
+        if let countries = persistentStorage.fetchManagedObjects(managedObject: CDCountry.self), !countries.isEmpty {
                 let countryNames = countries.compactMap { $0.countryName }
                 completion(countryNames)
             } else {
