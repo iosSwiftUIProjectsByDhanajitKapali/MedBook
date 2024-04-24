@@ -11,8 +11,6 @@ struct HomeScreen: View {
     
     @StateObject private var viewModel = HomeScreenViewModel()
     
-    @State var searchText: String = "game"
-    @State var isSearching: Bool = false
     
     @State private var selectedSegment: BooksSortType = .title
     
@@ -22,8 +20,8 @@ struct HomeScreen: View {
                 .background(.red)
                 .padding(.top, 20)
              
-            SearchBar(text: $searchText, isSearching: $isSearching) {
-                viewModel.getBookListing(forTitle: searchText)
+            SearchBar(text: $viewModel.searchText, isSearching: $viewModel.isSearching) {
+                viewModel.getBookListing(forTitle: viewModel.searchText, newSearch: true)
             }
             
             if viewModel.books.count > 0 {
@@ -120,7 +118,7 @@ extension HomeScreen {
             print(book.coverI)
             print(book.isBookmarked)
         }, loadMoreContent: {
-            viewModel.getBookListing(forTitle: searchText)
+            viewModel.getBookListing(forTitle: viewModel.searchText)
         }, isLoading: $viewModel.isBooksLoading)
     }
 }

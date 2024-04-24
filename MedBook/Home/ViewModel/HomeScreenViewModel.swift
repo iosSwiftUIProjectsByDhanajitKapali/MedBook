@@ -13,14 +13,27 @@ class HomeScreenViewModel: ObservableObject {
     @Published var books: [Book] = BookListModel.mockBooks()
     @Published var selectedSegmentIndex = 0
     
+    private var lastSearch: String = ""
+    @Published var searchText: String = "game"
+    @Published var isSearching: Bool = false
+    
     @Published var isBooksLoading = false
     
     private let bookmarkManager = BookmarkManager()
-    private var paginationCounter = 1
+    private var paginationCounter = 0
     
-    func getBookListing(forTitle: String) {
+    func getBookListing(forTitle: String, newSearch: Bool = false) {
+        if lastSearch == forTitle && newSearch == true {
+            return
+        } else {
+            lastSearch = forTitle
+        }
+        if newSearch {
+            paginationCounter = 0
+        }
         isBooksLoading = true
         if forTitle.count < 3 {
+            isBooksLoading = false
             return
         }
         paginationCounter += 1
