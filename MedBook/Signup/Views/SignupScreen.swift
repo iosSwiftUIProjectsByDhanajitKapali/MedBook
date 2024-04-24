@@ -82,7 +82,7 @@ struct SignupScreen: View {
     }
     
     @ViewBuilder func countrySelector() -> some View {
-        Picker("Options", selection: $viewModel.selectedCountry) {
+        Picker("Options", selection: $viewModel.selectedCountryIndex) {
             ForEach(0 ..< $viewModel.countryList.count) { index in
                 Text(viewModel.countryList[index])
             }

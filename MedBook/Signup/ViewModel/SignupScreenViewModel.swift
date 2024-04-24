@@ -10,7 +10,11 @@ import Foundation
 class SignupScreenViewModel: ObservableObject {
     
     @Published var countryList: [String] = []
-    @Published var selectedCountry = 0
+    @Published var selectedCountryIndex = 0 {
+        didSet {
+            saveSelectedCountry()
+        }
+    }
     
     @Published var email = "dhanajit30@gmail.com" {
         didSet {
@@ -35,6 +39,12 @@ class SignupScreenViewModel: ObservableObject {
         if let countries = countryRepository.getCountryList(), countries.count > 0 {
             DispatchQueue.main.async {
                 self.countryList = countries.compactMap { $0.countryName }.sorted()
+                let prevSelectedCountry = UserDefaults.standard.string(forKey: "selectedCountry")
+                if let index = self.countryList.firstIndex(where: { $0 == prevSelectedCountry }) {
+                    // index contains the first index where the value matches prevSelectedCountry
+                    self.selectedCountryIndex = index
+                }
+                self.saveSelectedCountry()
             }
         } else {
             // Get the Countries from API
@@ -45,6 +55,12 @@ class SignupScreenViewModel: ObservableObject {
                     self.countryRepository.saveCountryList(countries: countries)
                     DispatchQueue.main.async {
                         self.countryList = countryDataList.countries.map { $0.value.countryName }.sorted()
+                        let prevSelectedCountry = UserDefaults.standard.string(forKey: "selectedCountry")
+                        if let index = self.countryList.firstIndex(where: { $0 == prevSelectedCountry }) {
+                            // index contains the first index where the value matches prevSelectedCountry
+                            self.selectedCountryIndex = index
+                        }
+                        self.saveSelectedCountry()
                         print(self.countryList.count)
                     }
                 case .failure(let failure):
@@ -75,6 +91,10 @@ class SignupScreenViewModel: ObservableObject {
         let passwordRegex = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,}$"
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
         isPasswordValid = passwordTest.evaluate(with: password)
+    }
+    
+    private func saveSelectedCountry() {
+        UserDefaults.standard.set(countryList[selectedCountryIndex], forKey: "selectedCountry")
     }
     
 }
