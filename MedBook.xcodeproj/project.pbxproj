@@ -11,6 +11,7 @@
 		E71EAE462BD8D15E00E61F31 /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE452BD8D15E00E61F31 /* PersistentStorage.swift */; };
 		E71EAE4D2BD8D85A00E61F31 /* CDCountry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE4B2BD8D85A00E61F31 /* CDCountry+CoreDataClass.swift */; };
 		E71EAE4E2BD8D85A00E61F31 /* CDCountry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE4C2BD8D85A00E61F31 /* CDCountry+CoreDataProperties.swift */; };
+		E71EAE512BD8D8EC00E61F31 /* CountryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE502BD8D8EC00E61F31 /* CountryRepository.swift */; };
 		E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */; };
 		E75CEE1E2BD6BED900F1F2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */; };
 		E75CEE212BD6BED900F1F2F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		E71EAE452BD8D15E00E61F31 /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
 		E71EAE4B2BD8D85A00E61F31 /* CDCountry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCountry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E71EAE4C2BD8D85A00E61F31 /* CDCountry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCountry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E71EAE502BD8D8EC00E61F31 /* CountryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepository.swift; sourceTree = "<group>"; };
 		E75CEE162BD6BED800F1F2F6 /* MedBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedBookApp.swift; sourceTree = "<group>"; };
 		E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E71EAE4F2BD8D8C100E61F31 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E71EAE502BD8D8EC00E61F31 /* CountryRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		E75CEE0D2BD6BED800F1F2F6 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +107,7 @@
 		E75CEE182BD6BED800F1F2F6 /* MedBook */ = {
 			isa = PBXGroup;
 			children = (
+				E71EAE4F2BD8D8C100E61F31 /* Repository */,
 				E7B6321D2BD8114E00B00270 /* ReusableComponents */,
 				E7B6321C2BD8113C00B00270 /* Networking */,
 				E7B632172BD8109800B00270 /* Login */,
@@ -346,6 +357,7 @@
 				E71EAE4D2BD8D85A00E61F31 /* CDCountry+CoreDataClass.swift in Sources */,
 				E75CEE302BD6CA6E00F1F2F6 /* LandingScreen.swift in Sources */,
 				E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */,
+				E71EAE512BD8D8EC00E61F31 /* CountryRepository.swift in Sources */,
 				E75CEE322BD6CA9600F1F2F6 /* SignupScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

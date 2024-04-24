@@ -28,25 +28,30 @@ class SignupScreenViewModel: ObservableObject {
     @Published var isEmailValid = true
     @Published var isPasswordValid = true
     
-    private let persistentStorage = PersistentStorage.shared
+    private let countryRepository = CountryDataRepository()
     
-    func getCountries(completion: @escaping ([String]) -> Void) {
-        if let countries = persistentStorage.fetchManagedObjects(managedObject: CDCountry.self), !countries.isEmpty {
-                let countryNames = countries.compactMap { $0.countryName }
-                completion(countryNames)
-            } else {
-                NetworkManager().getApiData(forUrl: URL(string: "https://api.first.org/data/v1/countries"), resultType: CountryList.self) { result in
-                    switch result {
-                    case .success(let countryDataList):
-                        let countries = countryDataList.countries.map { $0.value.country }.sorted()
-                        self.persistentStorage.saveCountriesToCoreData(countries)
-                        completion(countries)
-                    case .failure(let error):
-                        print(error)
+    func getCountries() {
+        if let countries = countryRepository.getCountryList(), countries.count > 0 {
+            DispatchQueue.main.async {
+                self.countryList = countries.compactMap { $0.countryName }.sorted()
+            }
+        } else {
+            // Get the Countries from API
+            NetworkManager().getApiData(forUrl: URL(string: "https://api.first.org/data/v1/countries"), resultType: CountryList.self) { res in
+                switch res {
+                case .success(let countryDataList):
+                    let countries = countryDataList.countries.map{ Country(countryName: $0.value.countryName) }
+                    self.countryRepository.saveCountryList(countries: countries)
+                    DispatchQueue.main.async {
+                        self.countryList = countryDataList.countries.map { $0.value.countryName }.sorted()
+                        print(self.countryList.count)
                     }
+                case .failure(let failure):
+                    print(failure)
                 }
             }
         }
+    }
     
     // Create a validator service?
     private func validateEmail() {

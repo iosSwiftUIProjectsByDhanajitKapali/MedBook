@@ -18,6 +18,10 @@ extension CDCountry {
 
     @NSManaged public var countryName: String?
 
+    //custom functions
+    func convertToCountry() -> Country {
+        return Country(countryName: self.countryName ?? "")
+    }
 }
 
 extension CDCountry : Identifiable {

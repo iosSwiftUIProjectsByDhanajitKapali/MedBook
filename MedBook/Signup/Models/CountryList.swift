@@ -8,13 +8,17 @@
 import Foundation
 
 struct CountryList: Codable {
-    let countries: [String: Datum]
+    let countries: [String: Country]
     
     enum CodingKeys: String, CodingKey {
         case countries = "data"
     }
 }
 
-struct Datum: Codable {
-    let country: String
+struct Country: Codable {
+    let countryName: String
+    
+    enum CodingKeys: String, CodingKey {
+        case countryName = "country"
+    }
 }

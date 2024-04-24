@@ -135,7 +135,39 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "96B5D484-1D44-415D-A80B-4BD5BB15D63C"
+            uuid = "B13DE2DB-0E7D-4229-AB45-399369831A87"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MedBook/Signup/ViewModel/SignupScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "getCountries()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C06C9D6-EDEF-4D07-AC74-56685193C390"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MedBook/Signup/ViewModel/SignupScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "getCountries()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "096A719A-E265-4D10-97B4-D9DB053FBFA4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -144,31 +176,15 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
             endingLineNumber = "36"
-            landmarkName = "getCountries(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9DD7C23C-6DA0-436E-AC4A-E067A0FE84A5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MedBook/Signup/ViewModel/SignupScreenViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "getCountries(completion:)"
+            landmarkName = "getCountries()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "9DD7C23C-6DA0-436E-AC4A-E067A0FE84A5 - f50c762d9a375969"
+                  uuid = "096A719A-E265-4D10-97B4-D9DB053FBFA4 - 1bb40d83602c7337"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MedBook.SignupScreenViewModel.getCountries(completion: (Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in MedBook.SignupScreenViewModel.getCountries() -&gt; ()"
                   moduleName = "MedBook"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dhanajitk_1/Desktop/MyStuff/MedBook/MedBook/Signup/ViewModel/SignupScreenViewModel.swift"
@@ -176,56 +192,24 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "38"
                   endingLineNumber = "38"
-                  offsetFromSymbolStart = "484">
+                  offsetFromSymbolStart = "56">
                </Location>
                <Location
-                  uuid = "9DD7C23C-6DA0-436E-AC4A-E067A0FE84A5 - 56a95d224b303789"
+                  uuid = "096A719A-E265-4D10-97B4-D9DB053FBFA4 - a047d3535eb69aae"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;MedBook.CountryList, MedBook.ResponseStatus&gt;) -&gt; () in MedBook.SignupScreenViewModel.getCountries(completion: (Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (MedBook.Country) -&gt; Swift.Optional&lt;Swift.String&gt; in closure #1 @Swift.MainActor () -&gt; () in MedBook.SignupScreenViewModel.getCountries() -&gt; ()"
                   moduleName = "MedBook"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dhanajitk_1/Desktop/MyStuff/MedBook/MedBook/Signup/ViewModel/SignupScreenViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "180">
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "44">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DC826625-8230-4584-B1B4-CE814FA73038"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MedBook/Signup/ViewModel/SignupScreenViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "getCountries(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CBE38DDE-947D-4542-A9EF-26E5ACB3B3B5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MedBook/Signup/ViewModel/SignupScreenViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "getCountries(completion:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
