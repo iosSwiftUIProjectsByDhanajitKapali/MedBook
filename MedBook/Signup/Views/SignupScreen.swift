@@ -11,8 +11,6 @@ struct SignupScreen: View {
     @Environment(\.presentationMode) var presentationMode
     
     @StateObject var viewModel = SignupScreenViewModel()
-    
-    @State private var navigateToHome: Bool = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -20,7 +18,7 @@ struct SignupScreen: View {
             backButton()
                 .padding(.leading, 10)
                 .padding(.bottom, 20)
-            
+
             welcomeTitle()
                 .padding(.leading, 10)
             
@@ -42,13 +40,18 @@ struct SignupScreen: View {
             
         }
         .navigationBarBackButtonHidden(true)
-        .navigationDestination(isPresented: $navigateToHome, destination: {
+        .navigationDestination(isPresented: $viewModel.navigateToHome, destination: {
             HomeScreen()
         })
         .onAppear {
             viewModel.getCountries()
         }
     }
+    
+}
+
+//MARK: - Viewbuilders
+extension SignupScreen {
     
     @ViewBuilder func backButton() -> some View {
         Button {
@@ -94,7 +97,7 @@ struct SignupScreen: View {
         HStack {
             Spacer()
             
-            Button(action: signUp) {
+            Button(action: viewModel.signUp) {
                 if viewModel.isEmailValid && viewModel.isPasswordValid {
                     CustomButtonLabel(title: "Let's go ->")
                 } else {
@@ -107,34 +110,8 @@ struct SignupScreen: View {
             Spacer()
         }
     }
-    
-    private func signUp() {
-        viewModel.saveUserCreds()
-        if viewModel.isEmailValid && viewModel.isPasswordValid {
-            viewModel.markUserAsLoggedIn()
-            navigateToHome = true
-        }
-    }
 }
 
-struct EmailPasswordView: View {
-    @Binding var email: String
-    @Binding var password: String
-    
-    var body: some View {
-        VStack(spacing: 20) {
-            TextField("Email", text: $email)
-                .padding()
-                .background(Color.gray.opacity(0.1))
-                .cornerRadius(10)
-                
-            TextField("Password", text: $password)
-                .padding()
-                .background(Color.gray.opacity(0.1))
-                .cornerRadius(10)
-        }
-    }
-}
 
 #Preview {
     NavigationStack {

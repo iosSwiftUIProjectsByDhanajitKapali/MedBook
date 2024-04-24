@@ -26,6 +26,7 @@
 		E71EAE812BD96D8200E61F31 /* CustomButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE802BD96D8200E61F31 /* CustomButtonLabel.swift */; };
 		E71EAE832BD96EA800E61F31 /* BooksSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE822BD96EA800E61F31 /* BooksSortType.swift */; };
 		E71EAE852BD96EC400E61F31 /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE842BD96EC400E61F31 /* BookListView.swift */; };
+		E71EAE872BD9718700E61F31 /* EmailPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE862BD9718700E61F31 /* EmailPasswordView.swift */; };
 		E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */; };
 		E75CEE1E2BD6BED900F1F2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */; };
 		E75CEE212BD6BED900F1F2F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		E71EAE802BD96D8200E61F31 /* CustomButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonLabel.swift; sourceTree = "<group>"; };
 		E71EAE822BD96EA800E61F31 /* BooksSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksSortType.swift; sourceTree = "<group>"; };
 		E71EAE842BD96EC400E61F31 /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
+		E71EAE862BD9718700E61F31 /* EmailPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordView.swift; sourceTree = "<group>"; };
 		E75CEE162BD6BED800F1F2F6 /* MedBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedBookApp.swift; sourceTree = "<group>"; };
 		E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				E75CEE312BD6CA9600F1F2F6 /* SignupScreen.swift */,
+				E71EAE862BD9718700E61F31 /* EmailPasswordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E71EAE872BD9718700E61F31 /* EmailPasswordView.swift in Sources */,
 				E76F60DB2BD7C155003E7F0B /* NetworkManager.swift in Sources */,
 				E76F60DF2BD7C1A9003E7F0B /* Constants.swift in Sources */,
 				E76F60E12BD7C269003E7F0B /* BookListModel.swift in Sources */,

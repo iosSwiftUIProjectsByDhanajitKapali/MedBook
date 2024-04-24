@@ -9,32 +9,37 @@ import Foundation
 
 class SignupScreenViewModel: ObservableObject {
     
+    //MARK: - Published data members
     @Published var countryList: [String] = []
     @Published var selectedCountryIndex = 0 {
         didSet {
             saveSelectedCountry()
         }
     }
-    
-    @Published var email = "dhanajit30@gmail.com" {
+    @Published var email = "dhanajit30@gmail.com" { //TEST
         didSet {
-            //email = email.lowercased()
             validateEmail()
         }
     }
-    @Published var password = "#Dhanajit30" {
+    @Published var password = "#Dhanajit30" { //TEST
         didSet {
             validatePassword()
         }
     }
-    
-    
     @Published var isEmailValid = false
     @Published var isPasswordValid = false
+    @Published var navigateToHome: Bool = false
     
+    
+    //MARK: - Private data members
     private let countryRepository = CountryDataRepository()
     private let userManager = UserManager()
     
+}
+
+
+//MARK: - Public methods
+extension SignupScreenViewModel {
     func getCountries() {
         if let countries = countryRepository.getCountryList(), countries.count > 0 {
             DispatchQueue.main.async {
@@ -62,6 +67,14 @@ class SignupScreenViewModel: ObservableObject {
         }
     }
     
+    func signUp() {
+        saveUserCreds()
+        if isEmailValid && isPasswordValid {
+            markUserAsLoggedIn()
+            navigateToHome = true
+        }
+    }
+    
     func saveUserCreds() {
         userManager.createUser(user: User(email: email, password: password))
     }
@@ -69,9 +82,12 @@ class SignupScreenViewModel: ObservableObject {
     func markUserAsLoggedIn() {
         UserDefaults.standard.set(true, forKey: "loginStatus")
     }
-    
-    
-    private func setPrevSelectedCountry() {
+}
+
+
+//MARK: - Private methdods
+private extension SignupScreenViewModel {
+    func setPrevSelectedCountry() {
         let prevSelectedCountry = UserDefaults.standard.string(forKey: "selectedCountry")
         if let index = self.countryList.firstIndex(where: { $0 == prevSelectedCountry }) {
             // index contains the first index where the value matches prevSelectedCountry
@@ -80,23 +96,22 @@ class SignupScreenViewModel: ObservableObject {
     }
     
     // Create a validator service?
-    private func validateEmail() {
+    func validateEmail() {
         // Regular expression pattern for email validation
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         isEmailValid = emailTest.evaluate(with: email)
     }
     
-    private func validatePassword() {
+    func validatePassword() {
         // Password format validation
         let passwordRegex = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,}$"
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
         isPasswordValid = passwordTest.evaluate(with: password)
     }
     
-    private func saveSelectedCountry() {
+    func saveSelectedCountry() {
         print(countryList[selectedCountryIndex])
         UserDefaults.standard.set(countryList[selectedCountryIndex], forKey: "selectedCountry")
     }
-    
 }
