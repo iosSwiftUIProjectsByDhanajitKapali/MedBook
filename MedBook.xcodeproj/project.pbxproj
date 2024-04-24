@@ -21,6 +21,7 @@
 		E71EAE742BD8FBAA00E61F31 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE732BD8FBAA00E61F31 /* BookRepository.swift */; };
 		E71EAE762BD8FEF600E61F31 /* BookmarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE752BD8FEF600E61F31 /* BookmarkManager.swift */; };
 		E71EAE792BD9060B00E61F31 /* BookmarkScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE782BD9060B00E61F31 /* BookmarkScreenViewModel.swift */; };
+		E71EAE7C2BD9178D00E61F31 /* LoginScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EAE7B2BD9178D00E61F31 /* LoginScreenViewModel.swift */; };
 		E75CEE1A2BD6BED800F1F2F6 /* MedBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */; };
 		E75CEE1E2BD6BED900F1F2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */; };
 		E75CEE212BD6BED900F1F2F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75CEE202BD6BED900F1F2F6 /* Preview Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		E71EAE732BD8FBAA00E61F31 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		E71EAE752BD8FEF600E61F31 /* BookmarkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkManager.swift; sourceTree = "<group>"; };
 		E71EAE782BD9060B00E61F31 /* BookmarkScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkScreenViewModel.swift; sourceTree = "<group>"; };
+		E71EAE7B2BD9178D00E61F31 /* LoginScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewModel.swift; sourceTree = "<group>"; };
 		E75CEE162BD6BED800F1F2F6 /* MedBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75CEE192BD6BED800F1F2F6 /* MedBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedBookApp.swift; sourceTree = "<group>"; };
 		E75CEE1D2BD6BED900F1F2F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -161,6 +163,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		E71EAE7A2BD9178500E61F31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E71EAE7B2BD9178D00E61F31 /* LoginScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E75CEE0D2BD6BED800F1F2F6 = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +265,7 @@
 		E7B632172BD8109800B00270 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				E71EAE7A2BD9178500E61F31 /* ViewModel */,
 				E7B632182BD8109F00B00270 /* Views */,
 			);
 			path = Login;
@@ -443,6 +454,7 @@
 				E71EAE762BD8FEF600E61F31 /* BookmarkManager.swift in Sources */,
 				E71EAE742BD8FBAA00E61F31 /* BookRepository.swift in Sources */,
 				E75CEE322BD6CA9600F1F2F6 /* SignupScreen.swift in Sources */,
+				E71EAE7C2BD9178D00E61F31 /* LoginScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
