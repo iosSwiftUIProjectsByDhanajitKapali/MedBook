@@ -12,11 +12,18 @@ struct BookmarkScreen: View {
     @StateObject var viewModel = BookmarkScreenViewModel()
     
     var body: some View {
+//        BookListView(
+//            books: $viewModel.books
+//        ) { book in
+//            viewModel.updateBookMarkedBookStatus(book: book)
+//        }
         BookListView(
-            books: $viewModel.books
-        ) { book in
-            viewModel.updateBookMarkedBookStatus(book: book)
-        }
+            books: $viewModel.books,
+            bookmarkedBook: { book in
+                viewModel.updateBookMarkedBookStatus(book: book)
+            },
+            isLoading: .constant(false)
+        )
         .navigationTitle("Bookmark")
     }
 }

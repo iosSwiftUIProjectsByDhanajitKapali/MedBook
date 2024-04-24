@@ -254,10 +254,42 @@
             filePath = "MedBook/Home/ViewModel/HomeScreenViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "getBookListing(forTitle:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "93F63FD1-C038-4889-85EE-8DAEFF10446A - 7e657c6c677291a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MedBook.HomeScreenViewModel.getBookListing(forTitle: Swift.String) -&gt; ()"
+                  moduleName = "MedBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhanajitk_1/Desktop/MyStuff/MedBook/MedBook/Home/ViewModel/HomeScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "93F63FD1-C038-4889-85EE-8DAEFF10446A - 7e657c6c677291c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MedBook.HomeScreenViewModel.getBookListing(forTitle: Swift.String) -&gt; ()"
+                  moduleName = "MedBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhanajitk_1/Desktop/MyStuff/MedBook/MedBook/Home/ViewModel/HomeScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "152">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -270,8 +302,8 @@
             filePath = "MedBook/Home/Views/HomeScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "bookList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,10 +318,42 @@
             filePath = "MedBook/Home/ViewModel/HomeScreenViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "getBookListing(forTitle:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7DBF0E6D-6119-45F8-AB36-949D4CF5857C - 373a3887b206debc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;MedBook.BookListModel, MedBook.ResponseStatus&gt;) -&gt; () in MedBook.HomeScreenViewModel.getBookListing(forTitle: Swift.String) -&gt; ()"
+                  moduleName = "MedBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhanajitk_1/Desktop/MyStuff/MedBook/MedBook/Home/ViewModel/HomeScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "7DBF0E6D-6119-45F8-AB36-949D4CF5857C - 373a3887b206e130"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;MedBook.BookListModel, MedBook.ResponseStatus&gt;) -&gt; () in MedBook.HomeScreenViewModel.getBookListing(forTitle: Swift.String) -&gt; ()"
+                  moduleName = "MedBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhanajitk_1/Desktop/MyStuff/MedBook/MedBook/Home/ViewModel/HomeScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -302,10 +366,42 @@
             filePath = "MedBook/Home/ViewModel/HomeScreenViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "getBookListing(forTitle:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1AE1C7A3-009D-4DB3-8113-8DC613BACEF3 - 8882b634e8ef50ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;MedBook.BookListModel, MedBook.ResponseStatus&gt;) -&gt; () in MedBook.HomeScreenViewModel.getBookListing(forTitle: Swift.String) -&gt; ()"
+                  moduleName = "MedBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhanajitk_1/Desktop/MyStuff/MedBook/MedBook/Home/ViewModel/HomeScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "800">
+               </Location>
+               <Location
+                  uuid = "1AE1C7A3-009D-4DB3-8113-8DC613BACEF3 - fbfd999d5e9d8fe0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;MedBook.BookListModel, MedBook.ResponseStatus&gt;) -&gt; () in MedBook.HomeScreenViewModel.getBookListing(forTitle: Swift.String) -&gt; ()"
+                  moduleName = "MedBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhanajitk_1/Desktop/MyStuff/MedBook/MedBook/Home/ViewModel/HomeScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

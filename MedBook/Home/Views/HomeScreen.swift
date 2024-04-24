@@ -115,32 +115,13 @@ extension HomeScreen {
     }
     
     @ViewBuilder func bookList() -> some View {
-//        if selectedSegment == .title {
-//            BookListView(books: viewModel.books)
-//        } else if selectedSegment == .average {
-//            
-//        } else {
-//            
-//        }
-            
         BookListView(books: $viewModel.books, bookmarkedBook: { book in
             viewModel.updateBookMarkedBookStatus(book: book)
             print(book.coverI)
             print(book.isBookmarked)
         }, loadMoreContent: {
             viewModel.getBookListing(forTitle: searchText)
-        })
-            
-//        List {
-//            ForEach(0..<viewModel.books.count, id: \.self) { i in
-//                BookListCell(book: viewModel.books[i])
-//                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
-//                    .listRowBackground(Color.clear)
-//                    .listRowSeparator(.hidden)
-//                    .padding(.vertical, 20)
-//            }
-//            .listStyle(PlainListStyle())
-//        }
+        }, isLoading: $viewModel.isBooksLoading)
     }
 }
 
@@ -150,40 +131,59 @@ struct BookListView: View {
     var bookmarkedBook: ((Book) -> Void)? = nil
     var loadMoreContent: (() -> Void)? = nil
     
+    @Binding var isLoading: Bool
+    
     var body: some View {
         List {
-            ForEach(0..<books.count, id: \.self) { i in
-                BookListCell(book: books[i])
-                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
-                    .swipeActions(edge: .trailing) {
-                        if books[i].isBookmarked {
-                            Button {
-                                books[i].isBookmarked.toggle()
-                                bookmarkedBook?(books[i])
-                            } label: {
-                                Label("Remove", systemImage: "bookmark.slash")
+            Section {
+                ForEach(0..<books.count, id: \.self) { i in
+                    BookListCell(book: books[i])
+                        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                        .swipeActions(edge: .trailing) {
+                            if books[i].isBookmarked {
+                                Button {
+                                    books[i].isBookmarked.toggle()
+                                    bookmarkedBook?(books[i])
+                                } label: {
+                                    Label("Remove", systemImage: "bookmark.slash")
+                                }
+                                .tint(.red)
+                            } else {
+                                Button {
+                                    books[i].isBookmarked.toggle()
+                                    bookmarkedBook?(books[i])
+                                } label: {
+                                    Label("Bookmark", systemImage: "bookmark")
+                                }
+                                .tint(.green)
                             }
-                            .tint(.red)
-                        } else {
-                            Button {
-                                books[i].isBookmarked.toggle()
-                                bookmarkedBook?(books[i])
-                            } label: {
-                                Label("Bookmark", systemImage: "bookmark")
+                        }
+                        .padding(.vertical, 20)
+                        .onAppear {
+                            if i+1 == books.count {
+                                loadMoreContent?()
                             }
-                            .tint(.green)
                         }
+                }
+                .listStyle(PlainListStyle())
+            } header: {
+                
+            } footer: {
+                if isLoading {
+                    HStack {
+                        Spacer()
+                        Text("Loading...")
+                        Spacer()
                     }
-                    .padding(.vertical, 20)
-                    .onAppear {
-                        if i+1 == books.count {
-                            loadMoreContent?()
-                        }
-                    }
+                    .background(.red)
+                } else {
+                    EmptyView()
+                }
             }
-            .listStyle(PlainListStyle())
+            
+            
         }
     }
 }

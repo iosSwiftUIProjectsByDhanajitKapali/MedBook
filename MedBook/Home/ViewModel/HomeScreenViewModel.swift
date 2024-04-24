@@ -13,10 +13,13 @@ class HomeScreenViewModel: ObservableObject {
     @Published var books: [Book] = BookListModel.mockBooks()
     @Published var selectedSegmentIndex = 0
     
+    @Published var isBooksLoading = false
+    
     private let bookmarkManager = BookmarkManager()
     private var paginationCounter = 1
     
     func getBookListing(forTitle: String) {
+        isBooksLoading = true
         if forTitle.count < 3 {
             return
         }
@@ -30,9 +33,13 @@ class HomeScreenViewModel: ObservableObject {
                 case .success(let bookList):
                     DispatchQueue.main.async {
                         self.books = bookList.books
+                        self.isBooksLoading = false
                     }
                 case .failure(let failure):
                     print(failure)
+                    DispatchQueue.main.async {
+                        self.isBooksLoading = false
+                    }
                 }
             }
     }
