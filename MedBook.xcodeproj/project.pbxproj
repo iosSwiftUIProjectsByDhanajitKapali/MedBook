@@ -54,6 +54,7 @@
 		E77AFF3A2BDA9CCD00F4AB2B /* UserCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF392BDA9CCD00F4AB2B /* UserCoreDataRepository.swift */; };
 		E77AFF3C2BDA9D0600F4AB2B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF3B2BDA9D0600F4AB2B /* User.swift */; };
 		E77AFF3E2BDA9D4100F4AB2B /* BookmarkCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF3D2BDA9D4100F4AB2B /* BookmarkCoreDataRepository.swift */; };
+		E77AFF402BDAA61A00F4AB2B /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF3F2BDAA61A00F4AB2B /* UserDefaults+Keys.swift */; };
 		E7B632222BD8247900B00270 /* BookmarkScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B632212BD8247900B00270 /* BookmarkScreen.swift */; };
 		E7B632252BD8360700B00270 /* SignupScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B632242BD8360700B00270 /* SignupScreenViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -106,6 +107,7 @@
 		E77AFF392BDA9CCD00F4AB2B /* UserCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoreDataRepository.swift; sourceTree = "<group>"; };
 		E77AFF3B2BDA9D0600F4AB2B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E77AFF3D2BDA9D4100F4AB2B /* BookmarkCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCoreDataRepository.swift; sourceTree = "<group>"; };
+		E77AFF3F2BDAA61A00F4AB2B /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
 		E7B632212BD8247900B00270 /* BookmarkScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkScreen.swift; sourceTree = "<group>"; };
 		E7B632242BD8360700B00270 /* SignupScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,6 +260,7 @@
 				E71EAE562BD8EAB000E61F31 /* CoreData */,
 				E71EAE4F2BD8D8C100E61F31 /* Repository */,
 				E7B6321D2BD8114E00B00270 /* ReusableComponents */,
+				E77AFF412BDAA6B600F4AB2B /* Extensions */,
 				E7B6321C2BD8113C00B00270 /* Networking */,
 				E7B632172BD8109800B00270 /* Login */,
 				E7B632162BD8108F00B00270 /* Signup */,
@@ -295,6 +298,14 @@
 				E77AFF372BDA9CB500F4AB2B /* BookAPIRepository.swift */,
 			);
 			path = Book;
+			sourceTree = "<group>";
+		};
+		E77AFF412BDAA6B600F4AB2B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E77AFF3F2BDAA61A00F4AB2B /* UserDefaults+Keys.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E7B632132BD8102000B00270 /* Home */ = {
@@ -539,6 +550,7 @@
 				E71EAE792BD9060B00E61F31 /* BookmarkScreenViewModel.swift in Sources */,
 				E71EAE462BD8D15E00E61F31 /* PersistentStorage.swift in Sources */,
 				E75CEE262BD6BED900F1F2F6 /* MedBook.xcdatamodeld in Sources */,
+				E77AFF402BDAA61A00F4AB2B /* UserDefaults+Keys.swift in Sources */,
 				E7B632222BD8247900B00270 /* BookmarkScreen.swift in Sources */,
 				E71EAE692BD8F7EB00E61F31 /* CDUser+CoreDataProperties.swift in Sources */,
 				E71EAE652BD8F25400E61F31 /* UserManager.swift in Sources */,

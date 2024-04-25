@@ -30,7 +30,7 @@ extension LoginScreenViewModel {
     }
     
     func markUserAsLoggedIn() {
-        UserDefaults.standard.set(true, forKey: "loginStatus")
+        UserDefaults.standard.set(true, forKey: UserDefaults.Keys.loginStatus)
     }
     
     func login() {

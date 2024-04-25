@@ -72,7 +72,7 @@ extension SignupScreenViewModel {
     }
     
     func markUserAsLoggedIn() {
-        UserDefaults.standard.set(true, forKey: "loginStatus")
+        UserDefaults.standard.set(true, forKey: UserDefaults.Keys.loginStatus)
     }
 }
 
@@ -80,7 +80,7 @@ extension SignupScreenViewModel {
 //MARK: - Private methdods
 private extension SignupScreenViewModel {
     func setPrevSelectedCountry() {
-        let prevSelectedCountry = UserDefaults.standard.string(forKey: "selectedCountry")
+        let prevSelectedCountry = UserDefaults.standard.string(forKey: UserDefaults.Keys.selectedCountry)
         print("prevSelectedCountry -> \(prevSelectedCountry)")
         if let index = self.countryList.firstIndex(where: { $0 == prevSelectedCountry }) {
             // index contains the first index where the value matches prevSelectedCountry
@@ -105,6 +105,6 @@ private extension SignupScreenViewModel {
     
     func saveSelectedCountry() {
         print(countryList[selectedCountryIndex])
-        UserDefaults.standard.set(countryList[selectedCountryIndex], forKey: "selectedCountry")
+        UserDefaults.standard.set(countryList[selectedCountryIndex], forKey: UserDefaults.Keys.selectedCountry)
     }
 }

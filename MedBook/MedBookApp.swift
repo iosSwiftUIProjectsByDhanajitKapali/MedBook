@@ -16,7 +16,7 @@ struct MedBookApp: App {
         WindowGroup {
             NavigationStack(path: $path) {
                 VStack(spacing: 0) {
-                    if UserDefaults.standard.bool(forKey: "loginStatus") {
+                    if UserDefaults.standard.bool(forKey: UserDefaults.Keys.loginStatus) {
                         HomeScreen(path: $path)
                     } else {
                         LandingScreen(path: $path)
