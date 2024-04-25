@@ -47,6 +47,10 @@ struct SignupScreen: View {
         .alert(isPresented: $viewModel.showAlert) {
             Alert(title: Text(Constants.SignupScreen.alertTitle), message: Text(Constants.SignupScreen.alertDescrption), dismissButton: .default(Text(Constants.SignupScreen.alertButtonTitle)))
         }
+        .onTapGesture {
+            // End editing (dismiss keyboard) when tapped
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
     
 }

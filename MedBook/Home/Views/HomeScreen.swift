@@ -37,6 +37,10 @@ struct HomeScreen: View {
         .onChange(of: viewModel.selectedSegment) { oldValue, newValue in
             viewModel.sortBooks(by: newValue)
         }
+        .onTapGesture {
+            // End editing (dismiss keyboard) when tapped
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
 }
 

@@ -10,11 +10,10 @@ import Foundation
 class HomeScreenViewModel: ObservableObject {
     
     //MARK: - Published data members
-    @Published var sortedBooks: [Book] = BookListModel.mockBooks() //TEST
-    @Published var books: [Book] = BookListModel.mockBooks() //TEST
+    @Published var books: [Book] = []
     @Published var selectedSegmentIndex = 0
     @Published var selectedSegment: BooksSortType = .title
-    @Published var searchText: String = "game" { //Test
+    @Published var searchText: String = "" {
         didSet {
             debounceSearch()
         }

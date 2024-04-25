@@ -41,6 +41,9 @@ class SignupScreenViewModel: ObservableObject {
     ) {
         self.userManager = userManager
         self.countryManager = countryManager
+        
+        validateEmail()
+        validatePassword()
     }
 }
 
