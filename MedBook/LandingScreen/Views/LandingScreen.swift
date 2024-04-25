@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LandingScreen: View {
-    
+    @Binding var path: NavigationPath
     var body: some View {
         VStack {
             Spacer()
@@ -18,13 +18,8 @@ struct LandingScreen: View {
                 .padding(.bottom, 20)
         }
         .navigationTitle("MedBook")
-        .navigationDestination(for: String.self) { dest in
-            if dest == "Signup" {
-                SignupScreen()
-            } else {
-                LoginScreen()
-            }
-        }
+        .navigationBarBackButtonHidden()
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 
@@ -42,13 +37,19 @@ extension LandingScreen {
         HStack {
             Spacer()
             
-            NavigationLink(value: "Signup") {
+            Button(action: {
+                path.append("signup")
+            }, label: {
                 CustomButtonLabel(title: "Signup")
-            }
+            })
             .padding(.trailing, 10)
-            NavigationLink(value: "Login") {
-                CustomButtonLabel(title: "Login   ")
-            }
+            
+            Button(action: {
+                path.append("login")
+            }, label: {
+                CustomButtonLabel(title: "Login")
+            })
+            
             Spacer()
         }
     }
@@ -57,6 +58,6 @@ extension LandingScreen {
 
 #Preview {
     NavigationStack {
-        LandingScreen()
+        LandingScreen(path: .constant(NavigationPath()))
     }
 }

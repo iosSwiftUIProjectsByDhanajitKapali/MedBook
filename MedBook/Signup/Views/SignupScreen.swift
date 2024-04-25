@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignupScreen: View {
+    @Binding var path: NavigationPath
     @Environment(\.presentationMode) var presentationMode
     
     @StateObject var viewModel = SignupScreenViewModel()
@@ -40,11 +41,11 @@ struct SignupScreen: View {
             
         }
         .navigationBarBackButtonHidden(true)
-        .navigationDestination(isPresented: $viewModel.navigateToHome, destination: {
-            HomeScreen()
-        })
         .onAppear {
             viewModel.getCountries()
+        }
+        .alert(isPresented: $viewModel.showAlert) {
+            Alert(title: Text("Alert"), message: Text("Invalid user/password"), dismissButton: .default(Text("OK")))
         }
     }
     
@@ -97,14 +98,14 @@ extension SignupScreen {
         HStack {
             Spacer()
             
-            Button(action: viewModel.signUp) {
-                if viewModel.isEmailValid && viewModel.isPasswordValid {
-                    CustomButtonLabel(title: "Let's go ->")
-                } else {
-                    CustomDisabledButtonLabel(title: "Let's go ->")
+            Button(action: {
+                if viewModel.isEmailValid && viewModel.isPasswordValid {   
+                    path.append("homeScreen")
                 }
-            }
-            .disabled(!viewModel.isEmailValid && !viewModel.isPasswordValid)
+                viewModel.signUp()
+            }, label: {
+                CustomButtonLabel(title: "Let's go ->")
+            })
             .padding()
             
             Spacer()
@@ -115,6 +116,6 @@ extension SignupScreen {
 
 #Preview {
     NavigationStack {
-        SignupScreen()
+        SignupScreen(path: .constant(NavigationPath()))
     }
 }

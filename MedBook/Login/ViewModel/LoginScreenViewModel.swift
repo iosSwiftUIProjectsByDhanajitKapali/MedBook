@@ -12,7 +12,6 @@ class LoginScreenViewModel: ObservableObject {
     //MARK: - Published data members
     @Published var email = "dhanajit30@gmail.com" //TEST
     @Published var password = "#Dhanajit30" //TEST
-    @Published var navigateToHome: Bool = false
     @Published var showAlert: Bool = false
 
     private let userManager: UserManagerProtocol
@@ -37,7 +36,6 @@ extension LoginScreenViewModel {
     func login() {
         if isValidUser() {
             markUserAsLoggedIn()
-            navigateToHome = true
         } else {
             showAlert = true
         }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginScreen: View {
+    @Binding var path: NavigationPath
     @Environment(\.presentationMode) var presentationMode
     
     @StateObject private var viewModel = LoginScreenViewModel()
@@ -29,11 +30,8 @@ struct LoginScreen: View {
         }
         .navigationBarBackButtonHidden(true)
         .alert(isPresented: $viewModel.showAlert) {
-                Alert(title: Text("Alert"), message: Text("Invalid user/password"), dismissButton: .default(Text("OK")))
-            }
-        .navigationDestination(isPresented: $viewModel.navigateToHome, destination: {
-            HomeScreen()
-        })
+            Alert(title: Text("Alert"), message: Text("Invalid user/password"), dismissButton: .default(Text("OK")))
+        }
     }
     
     
@@ -78,9 +76,14 @@ extension LoginScreen {
         HStack {
             Spacer()
             
-            Button(action: viewModel.login) {
-                CustomButtonLabel(title: "Login ->")
-            }
+            Button(action: {
+                if viewModel.isValidUser() {
+                    path.append("homeScreen")
+                }
+                viewModel.login()
+            }, label: {
+                CustomButtonLabel(title: "Login")
+            })
             .padding()
             
             Spacer()
@@ -90,6 +93,6 @@ extension LoginScreen {
 
 #Preview {
     NavigationStack {
-        LoginScreen()
+        LoginScreen(path: .constant(NavigationPath()))
     }
 }

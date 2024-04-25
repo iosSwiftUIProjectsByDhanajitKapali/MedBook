@@ -28,7 +28,7 @@ class SignupScreenViewModel: ObservableObject {
     }
     @Published var isEmailValid = false
     @Published var isPasswordValid = false
-    @Published var navigateToHome: Bool = false
+    @Published var showAlert: Bool = false
     
     
     //MARK: - Private data members
@@ -75,10 +75,11 @@ extension SignupScreenViewModel {
     }
     
     func signUp() {
-        saveUserCreds()
         if isEmailValid && isPasswordValid {
+            saveUserCreds()
             markUserAsLoggedIn()
-            navigateToHome = true
+        } else {
+            showAlert = true
         }
     }
     

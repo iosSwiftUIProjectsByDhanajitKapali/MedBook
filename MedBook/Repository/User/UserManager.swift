@@ -29,7 +29,7 @@ struct UserManager: UserManagerProtocol {
         let users = self.fetchAllUsers()
         guard let users = users else { return false }
         for user in users {
-            if user.email == forUser.email {
+            if user.email == forUser.email && user.password == forUser.password {
                 return true
             }
         }

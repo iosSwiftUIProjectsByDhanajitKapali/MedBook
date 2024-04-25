@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    @Binding var path: NavigationPath
     @StateObject private var viewModel = HomeScreenViewModel()
     
     var body: some View {
@@ -68,8 +69,8 @@ extension HomeScreen {
     
     @ViewBuilder func logOutButton() -> some View {
         Button(action: {
-            //Pop to LandingScreen
-            viewModel.markUserAsLoggedOut()
+            viewModel.logout()
+            path.append("landing")
         }, label: {
             Image(systemName: "delete.left")
                 .foregroundStyle(.red)
@@ -109,7 +110,7 @@ extension HomeScreen {
 
 #Preview {
     NavigationStack {
-        HomeScreen()
+        HomeScreen(path: .constant(NavigationPath()))
     }
 }
 

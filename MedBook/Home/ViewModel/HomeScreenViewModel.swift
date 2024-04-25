@@ -80,6 +80,10 @@ extension HomeScreenViewModel {
     func markUserAsLoggedOut() {
         UserDefaults.standard.set(false, forKey: "loginStatus")
     }
+    
+    func logout() {
+        markUserAsLoggedOut()
+    }
 }
 
 
