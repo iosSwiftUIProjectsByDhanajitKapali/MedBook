@@ -46,6 +46,9 @@
 		E76F60E32BD7DBDD003E7F0B /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F60E22BD7DBDD003E7F0B /* BookListCell.swift */; };
 		E76F60E52BD7DBFD003E7F0B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F60E42BD7DBFD003E7F0B /* SearchBar.swift */; };
 		E77AFF2D2BDA748A00F4AB2B /* Constants+SignupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF2C2BDA748A00F4AB2B /* Constants+SignupScreen.swift */; };
+		E77AFF2F2BDA7E6400F4AB2B /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF2E2BDA7E6400F4AB2B /* CountryManager.swift */; };
+		E77AFF312BDA982600F4AB2B /* CountryCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF302BDA982600F4AB2B /* CountryCoreDataRepository.swift */; };
+		E77AFF332BDA983900F4AB2B /* CountryAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF322BDA983900F4AB2B /* CountryAPIRepository.swift */; };
 		E7B632222BD8247900B00270 /* BookmarkScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B632212BD8247900B00270 /* BookmarkScreen.swift */; };
 		E7B632252BD8360700B00270 /* SignupScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B632242BD8360700B00270 /* SignupScreenViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -90,6 +93,9 @@
 		E76F60E22BD7DBDD003E7F0B /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
 		E76F60E42BD7DBFD003E7F0B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		E77AFF2C2BDA748A00F4AB2B /* Constants+SignupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+SignupScreen.swift"; sourceTree = "<group>"; };
+		E77AFF2E2BDA7E6400F4AB2B /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
+		E77AFF302BDA982600F4AB2B /* CountryCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCoreDataRepository.swift; sourceTree = "<group>"; };
+		E77AFF322BDA983900F4AB2B /* CountryAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryAPIRepository.swift; sourceTree = "<group>"; };
 		E7B632212BD8247900B00270 /* BookmarkScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkScreen.swift; sourceTree = "<group>"; };
 		E7B632242BD8360700B00270 /* SignupScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +206,9 @@
 			isa = PBXGroup;
 			children = (
 				E71EAE502BD8D8EC00E61F31 /* CountryRepository.swift */,
+				E77AFF2E2BDA7E6400F4AB2B /* CountryManager.swift */,
+				E77AFF302BDA982600F4AB2B /* CountryCoreDataRepository.swift */,
+				E77AFF322BDA983900F4AB2B /* CountryAPIRepository.swift */,
 			);
 			path = Country;
 			sourceTree = "<group>";
@@ -493,7 +502,9 @@
 				E7B632252BD8360700B00270 /* SignupScreenViewModel.swift in Sources */,
 				E71EAE852BD96EC400E61F31 /* BookListView.swift in Sources */,
 				E71EAE442BD8D06700E61F31 /* CountryList.swift in Sources */,
+				E77AFF332BDA983900F4AB2B /* CountryAPIRepository.swift in Sources */,
 				E75CEE362BD6D6EC00F1F2F6 /* HomeScreen.swift in Sources */,
+				E77AFF312BDA982600F4AB2B /* CountryCoreDataRepository.swift in Sources */,
 				E71EAE702BD8FB7B00E61F31 /* CDBook+CoreDataClass.swift in Sources */,
 				E71EAE5A2BD8EAE900E61F31 /* UserRepository.swift in Sources */,
 				E71EAE8C2BD9787D00E61F31 /* ResponseStatus.swift in Sources */,
@@ -512,6 +523,7 @@
 				E71EAE762BD8FEF600E61F31 /* BookmarkManager.swift in Sources */,
 				E71EAE832BD96EA800E61F31 /* BooksSortType.swift in Sources */,
 				E71EAE742BD8FBAA00E61F31 /* BookRepository.swift in Sources */,
+				E77AFF2F2BDA7E6400F4AB2B /* CountryManager.swift in Sources */,
 				E75CEE322BD6CA9600F1F2F6 /* SignupScreen.swift in Sources */,
 				E71EAE7C2BD9178D00E61F31 /* LoginScreenViewModel.swift in Sources */,
 				E77AFF2D2BDA748A00F4AB2B /* Constants+SignupScreen.swift in Sources */,

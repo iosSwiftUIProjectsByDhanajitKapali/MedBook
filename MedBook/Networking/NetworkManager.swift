@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct NetworkManager{
+protocol NetworkManagerProtocol {
+    func getApiData<T: Codable>(forUrl: URL?, resultType: T.Type, completionHandler: @escaping (Result<T, ResponseStatus>) -> Void)
+}
+
+struct NetworkManager: NetworkManagerProtocol {
     func getApiData<T:Codable>(forUrl : URL?, resultType:T.Type, completionHandler:@escaping(Result<T, ResponseStatus>)-> Void){
         
         guard let forUrl = forUrl else { return }

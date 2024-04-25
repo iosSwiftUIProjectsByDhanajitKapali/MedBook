@@ -32,44 +32,28 @@ class SignupScreenViewModel: ObservableObject {
     
     
     //MARK: - Private data members
-    private let countryRepository: CountryRepository
     private let userManager: UserManagerProtocol
+    private let countryManager: CountryManagerProtocol
     
     init (
         userManager: UserManagerProtocol = UserManager(),
-        countryRepository: CountryRepository = CountryDataRepository()
+        countryManager: CountryManagerProtocol = CountryManager()
     ) {
         self.userManager = userManager
-        self.countryRepository = countryRepository
+        self.countryManager = countryManager
     }
 }
 
 
 //MARK: - Public methods
 extension SignupScreenViewModel {
+    
     func getCountries() {
-        if let countries = countryRepository.getCountryList(), countries.count > 0 {
+        countryManager.getCountryList { countries in
             DispatchQueue.main.async {
-                self.countryList = countries.compactMap { $0.countryName }.sorted()
+                self.countryList = countries
                 self.setPrevSelectedCountry()
                 self.saveSelectedCountry()
-            }
-        } else {
-            // Get the Countries from API
-            NetworkManager().getApiData(forUrl: URL(string: "https://api.first.org/data/v1/countries"), resultType: CountryList.self) { res in
-                switch res {
-                case .success(let countryDataList):
-                    let countries = countryDataList.countries.map{ Country(countryName: $0.value.countryName) }
-                    self.countryRepository.saveCountryList(countries: countries)
-                    DispatchQueue.main.async {
-                        self.countryList = countryDataList.countries.map { $0.value.countryName }.sorted()
-                        self.setPrevSelectedCountry()
-                        self.saveSelectedCountry()
-                        print(self.countryList.count)
-                    }
-                case .failure(let failure):
-                    print(failure)
-                }
             }
         }
     }
