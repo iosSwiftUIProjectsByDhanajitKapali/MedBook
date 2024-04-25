@@ -49,6 +49,11 @@
 		E77AFF2F2BDA7E6400F4AB2B /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF2E2BDA7E6400F4AB2B /* CountryManager.swift */; };
 		E77AFF312BDA982600F4AB2B /* CountryCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF302BDA982600F4AB2B /* CountryCoreDataRepository.swift */; };
 		E77AFF332BDA983900F4AB2B /* CountryAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF322BDA983900F4AB2B /* CountryAPIRepository.swift */; };
+		E77AFF362BDA9C9E00F4AB2B /* BookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF352BDA9C9E00F4AB2B /* BookManager.swift */; };
+		E77AFF382BDA9CB500F4AB2B /* BookAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF372BDA9CB500F4AB2B /* BookAPIRepository.swift */; };
+		E77AFF3A2BDA9CCD00F4AB2B /* UserCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF392BDA9CCD00F4AB2B /* UserCoreDataRepository.swift */; };
+		E77AFF3C2BDA9D0600F4AB2B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF3B2BDA9D0600F4AB2B /* User.swift */; };
+		E77AFF3E2BDA9D4100F4AB2B /* BookmarkCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF3D2BDA9D4100F4AB2B /* BookmarkCoreDataRepository.swift */; };
 		E7B632222BD8247900B00270 /* BookmarkScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B632212BD8247900B00270 /* BookmarkScreen.swift */; };
 		E7B632252BD8360700B00270 /* SignupScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B632242BD8360700B00270 /* SignupScreenViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -96,6 +101,11 @@
 		E77AFF2E2BDA7E6400F4AB2B /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
 		E77AFF302BDA982600F4AB2B /* CountryCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCoreDataRepository.swift; sourceTree = "<group>"; };
 		E77AFF322BDA983900F4AB2B /* CountryAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryAPIRepository.swift; sourceTree = "<group>"; };
+		E77AFF352BDA9C9E00F4AB2B /* BookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookManager.swift; sourceTree = "<group>"; };
+		E77AFF372BDA9CB500F4AB2B /* BookAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAPIRepository.swift; sourceTree = "<group>"; };
+		E77AFF392BDA9CCD00F4AB2B /* UserCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoreDataRepository.swift; sourceTree = "<group>"; };
+		E77AFF3B2BDA9D0600F4AB2B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E77AFF3D2BDA9D4100F4AB2B /* BookmarkCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCoreDataRepository.swift; sourceTree = "<group>"; };
 		E7B632212BD8247900B00270 /* BookmarkScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkScreen.swift; sourceTree = "<group>"; };
 		E7B632242BD8360700B00270 /* SignupScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				E71EAE432BD8D06700E61F31 /* CountryList.swift */,
+				E77AFF3B2BDA9D0600F4AB2B /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -123,6 +134,7 @@
 		E71EAE4F2BD8D8C100E61F31 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				E77AFF342BDA9C8D00F4AB2B /* Book */,
 				E71EAE892BD9780F00E61F31 /* Bookmark */,
 				E71EAE882BD977F100E61F31 /* User */,
 				E71EAE8A2BD9782400E61F31 /* Country */,
@@ -189,6 +201,7 @@
 			children = (
 				E71EAE642BD8F25400E61F31 /* UserManager.swift */,
 				E71EAE592BD8EAE900E61F31 /* UserRepository.swift */,
+				E77AFF392BDA9CCD00F4AB2B /* UserCoreDataRepository.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -198,6 +211,7 @@
 			children = (
 				E71EAE752BD8FEF600E61F31 /* BookmarkManager.swift */,
 				E71EAE732BD8FBAA00E61F31 /* BookmarkRepository.swift */,
+				E77AFF3D2BDA9D4100F4AB2B /* BookmarkCoreDataRepository.swift */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
@@ -272,6 +286,15 @@
 				E7B632152BD8107500B00270 /* Views */,
 			);
 			path = LandingScreen;
+			sourceTree = "<group>";
+		};
+		E77AFF342BDA9C8D00F4AB2B /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				E77AFF352BDA9C9E00F4AB2B /* BookManager.swift */,
+				E77AFF372BDA9CB500F4AB2B /* BookAPIRepository.swift */,
+			);
+			path = Book;
 			sourceTree = "<group>";
 		};
 		E7B632132BD8102000B00270 /* Home */ = {
@@ -495,6 +518,7 @@
 				E76F60DD2BD7C193003E7F0B /* Constants+NetworkManager.swift in Sources */,
 				E76F60D92BD7C0FA003E7F0B /* HomeScreenViewModel.swift in Sources */,
 				E76F60E52BD7DBFD003E7F0B /* SearchBar.swift in Sources */,
+				E77AFF3A2BDA9CCD00F4AB2B /* UserCoreDataRepository.swift in Sources */,
 				E71EAE712BD8FB7B00E61F31 /* CDBook+CoreDataProperties.swift in Sources */,
 				E71EAE8F2BD9789700E61F31 /* APIError.swift in Sources */,
 				E71EAE7E2BD96D5900E61F31 /* CustomDisabledButtonLabel.swift in Sources */,
@@ -504,8 +528,12 @@
 				E71EAE442BD8D06700E61F31 /* CountryList.swift in Sources */,
 				E77AFF332BDA983900F4AB2B /* CountryAPIRepository.swift in Sources */,
 				E75CEE362BD6D6EC00F1F2F6 /* HomeScreen.swift in Sources */,
+				E77AFF382BDA9CB500F4AB2B /* BookAPIRepository.swift in Sources */,
+				E77AFF3E2BDA9D4100F4AB2B /* BookmarkCoreDataRepository.swift in Sources */,
+				E77AFF362BDA9C9E00F4AB2B /* BookManager.swift in Sources */,
 				E77AFF312BDA982600F4AB2B /* CountryCoreDataRepository.swift in Sources */,
 				E71EAE702BD8FB7B00E61F31 /* CDBook+CoreDataClass.swift in Sources */,
+				E77AFF3C2BDA9D0600F4AB2B /* User.swift in Sources */,
 				E71EAE5A2BD8EAE900E61F31 /* UserRepository.swift in Sources */,
 				E71EAE8C2BD9787D00E61F31 /* ResponseStatus.swift in Sources */,
 				E71EAE792BD9060B00E61F31 /* BookmarkScreenViewModel.swift in Sources */,

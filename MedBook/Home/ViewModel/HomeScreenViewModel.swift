@@ -27,9 +27,11 @@ class HomeScreenViewModel: ObservableObject {
     private var debounceTimer: Timer?
     private var paginationCounter = 1
     private let bookmarkManager: BookmarkManagerProtocol
+    private let bookManager: BookManagerProtocol
     
-    init(bookmarkManager: BookmarkManagerProtocol = BookmarkManager()) {
+    init(bookmarkManager: BookmarkManagerProtocol = BookmarkManager(), bookManager: BookManagerProtocol = BookManager()) {
         self.bookmarkManager = bookmarkManager
+        self.bookManager = bookManager
     }
 }
 
@@ -48,15 +50,13 @@ extension HomeScreenViewModel {
         isBooksLoading = true
         books = []  // Reset the search results
         paginationCounter = 1
-        let urlString = "https://openlibrary.org/search.json?title=\(searchText)&limit=\(10)"
-        fetchBooks(url: URL(string: urlString))
+        fetchBooks(forTitle: searchText, page: 10)
     }
     
     func paginateBookListing() {
         isBooksLoading = true
         paginationCounter += 1
-        let urlString = "https://openlibrary.org/search.json?title=\(searchText)&limit=\(paginationCounter*10)"
-        fetchBooks(url: URL(string: urlString))
+        fetchBooks(forTitle: searchText, page: paginationCounter*10)
     }
     
     func sortBooks(by sortType: BooksSortType) {
@@ -106,22 +106,23 @@ extension HomeScreenViewModel {
         }
     }
     
-    private func fetchBooks(url: URL?) {
-        NetworkManager().getApiData(
-            forUrl: url,
-            resultType: BookListModel.self) { res in
-                switch res {
-                case .success(let bookListData):
-                    DispatchQueue.main.async {
-                        self.updateBooksWithBookmarks(bookListData: bookListData)
-                    }
-                case .failure(let failure):
-                    print(failure)
-                    DispatchQueue.main.async {
-                        self.isBooksLoading = false
-                    }
+    private func fetchBooks(forTitle: String, page: Int) {
+        bookManager.fetchBooks(
+            forTitle: forTitle,
+            page: page
+        ) { res in
+            switch res {
+            case .success(let bookListData):
+                DispatchQueue.main.async {
+                    self.updateBooksWithBookmarks(bookListData: bookListData)
+                }
+            case .failure(let failure):
+                print(failure)
+                DispatchQueue.main.async {
+                    self.isBooksLoading = false
                 }
             }
+        }
     }
     
     private func updateBooksWithBookmarks(bookListData: BookListModel) {
