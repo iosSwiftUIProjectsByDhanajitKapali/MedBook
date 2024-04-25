@@ -22,14 +22,14 @@ struct MedBookApp: App {
                         LandingScreen(path: $path)
                     }
                 }
-                .navigationDestination(for: String.self, destination: { dest in
-                    if dest == "signup" {
+                .navigationDestination(for: NavigationDestination.self, destination: { dest in
+                    if dest == NavigationDestination.signupScreen {
                         SignupScreen(path: $path)
-                    } else if dest == "login" {
+                    } else if dest == NavigationDestination.loginScreen {
                         LoginScreen(path: $path)
-                    } else if dest == "homeScreen" {
+                    } else if dest == NavigationDestination.homeScreen {
                         HomeScreen(path: $path)
-                    } else if dest == "landing" {
+                    } else if dest == NavigationDestination.landingScreen {
                         LandingScreen(path: $path)
                     }
                 })
@@ -38,4 +38,11 @@ struct MedBookApp: App {
             .preferredColorScheme(.light)
         }
     }
+}
+
+enum NavigationDestination {
+    case signupScreen
+    case loginScreen
+    case homeScreen
+    case landingScreen
 }

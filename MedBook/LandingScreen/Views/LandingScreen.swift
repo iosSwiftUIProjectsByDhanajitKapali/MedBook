@@ -38,14 +38,14 @@ extension LandingScreen {
             Spacer()
             
             Button(action: {
-                path.append("signup")
+                path.append(NavigationDestination.signupScreen)
             }, label: {
                 CustomButtonLabel(title: "Signup")
             })
             .padding(.trailing, 10)
             
             Button(action: {
-                path.append("login")
+                path.append(NavigationDestination.loginScreen)
             }, label: {
                 CustomButtonLabel(title: "Login")
             })

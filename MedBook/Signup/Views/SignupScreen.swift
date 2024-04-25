@@ -100,7 +100,7 @@ extension SignupScreen {
             
             Button(action: {
                 if viewModel.isEmailValid && viewModel.isPasswordValid {   
-                    path.append("homeScreen")
+                    path.append(NavigationDestination.homeScreen)
                 }
                 viewModel.signUp()
             }, label: {

@@ -70,7 +70,7 @@ extension HomeScreen {
     @ViewBuilder func logOutButton() -> some View {
         Button(action: {
             viewModel.logout()
-            path.append("landing")
+            path.append(NavigationDestination.landingScreen)
         }, label: {
             Image(systemName: "delete.left")
                 .foregroundStyle(.red)

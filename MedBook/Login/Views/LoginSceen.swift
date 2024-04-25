@@ -78,7 +78,7 @@ extension LoginScreen {
             
             Button(action: {
                 if viewModel.isValidUser() {
-                    path.append("homeScreen")
+                    path.append(NavigationDestination.homeScreen)
                 }
                 viewModel.login()
             }, label: {
