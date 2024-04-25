@@ -97,6 +97,7 @@ extension SignupScreenViewModel {
 private extension SignupScreenViewModel {
     func setPrevSelectedCountry() {
         let prevSelectedCountry = UserDefaults.standard.string(forKey: "selectedCountry")
+        print("prevSelectedCountry -> \(prevSelectedCountry)")
         if let index = self.countryList.firstIndex(where: { $0 == prevSelectedCountry }) {
             // index contains the first index where the value matches prevSelectedCountry
             self.selectedCountryIndex = index
