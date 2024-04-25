@@ -45,6 +45,7 @@
 		E76F60E12BD7C269003E7F0B /* BookListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F60E02BD7C269003E7F0B /* BookListModel.swift */; };
 		E76F60E32BD7DBDD003E7F0B /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F60E22BD7DBDD003E7F0B /* BookListCell.swift */; };
 		E76F60E52BD7DBFD003E7F0B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F60E42BD7DBFD003E7F0B /* SearchBar.swift */; };
+		E77AFF2D2BDA748A00F4AB2B /* Constants+SignupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AFF2C2BDA748A00F4AB2B /* Constants+SignupScreen.swift */; };
 		E7B632222BD8247900B00270 /* BookmarkScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B632212BD8247900B00270 /* BookmarkScreen.swift */; };
 		E7B632252BD8360700B00270 /* SignupScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B632242BD8360700B00270 /* SignupScreenViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -88,6 +89,7 @@
 		E76F60E02BD7C269003E7F0B /* BookListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListModel.swift; sourceTree = "<group>"; };
 		E76F60E22BD7DBDD003E7F0B /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
 		E76F60E42BD7DBFD003E7F0B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		E77AFF2C2BDA748A00F4AB2B /* Constants+SignupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+SignupScreen.swift"; sourceTree = "<group>"; };
 		E7B632212BD8247900B00270 /* BookmarkScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkScreen.swift; sourceTree = "<group>"; };
 		E7B632242BD8360700B00270 /* SignupScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -297,6 +299,7 @@
 				E71EAE422BD8D04C00E61F31 /* Models */,
 				E7B632192BD810A500B00270 /* Views */,
 				E7B632232BD835ED00B00270 /* ViewModel */,
+				E77AFF2C2BDA748A00F4AB2B /* Constants+SignupScreen.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				E71EAE742BD8FBAA00E61F31 /* BookRepository.swift in Sources */,
 				E75CEE322BD6CA9600F1F2F6 /* SignupScreen.swift in Sources */,
 				E71EAE7C2BD9178D00E61F31 /* LoginScreenViewModel.swift in Sources */,
+				E77AFF2D2BDA748A00F4AB2B /* Constants+SignupScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

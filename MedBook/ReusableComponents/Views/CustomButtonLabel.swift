@@ -22,3 +22,7 @@ struct CustomButtonLabel: View {
             )
     }
 }
+
+#Preview {
+    CustomButtonLabel(title: "Login")
+}

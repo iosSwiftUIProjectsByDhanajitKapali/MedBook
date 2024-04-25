@@ -45,7 +45,7 @@ struct SignupScreen: View {
             viewModel.getCountries()
         }
         .alert(isPresented: $viewModel.showAlert) {
-            Alert(title: Text("Alert"), message: Text("Invalid user/password"), dismissButton: .default(Text("OK")))
+            Alert(title: Text(Constants.SignupScreen.alertTitle), message: Text(Constants.SignupScreen.alertDescrption), dismissButton: .default(Text(Constants.SignupScreen.alertButtonTitle)))
         }
     }
     
@@ -58,7 +58,7 @@ extension SignupScreen {
         Button {
             presentationMode.wrappedValue.dismiss()
         } label: {
-            Image(systemName: "chevron.left")
+            Image(systemName: Constants.ImageConstants.chevronLeft)
                 .resizable()
                 .frame(width: 20, height: 30)
                 .fontWeight(.bold)
@@ -68,12 +68,12 @@ extension SignupScreen {
     
     @ViewBuilder func welcomeTitle() -> some View {
         VStack(alignment: .leading) {
-            Text("Welcome")
+            Text(Constants.SignupScreen.welcomeTitle)
                 .fontWeight(.bold)
                 .font(.system(size: 30))
                 .foregroundStyle(.black)
             
-            Text("sign up to continue")
+            Text(Constants.SignupScreen.subtitle)
                 .fontWeight(.bold)
                 .font(.system(size: 30))
                 .foregroundStyle(.gray)
@@ -104,7 +104,7 @@ extension SignupScreen {
                 }
                 viewModel.signUp()
             }, label: {
-                CustomButtonLabel(title: "Let's go ->")
+                CustomButtonLabel(title: Constants.SignupScreen.buttonTitle)
             })
             .padding()
             

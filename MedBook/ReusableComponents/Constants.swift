@@ -9,4 +9,7 @@ import Foundation
 
 struct Constants {
     
+    struct ImageConstants {
+        static let chevronLeft = "chevron.left"
+    }
 }
