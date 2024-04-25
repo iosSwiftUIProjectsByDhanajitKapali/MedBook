@@ -14,7 +14,7 @@ protocol UserRepository {
     func getAll() -> [User]?
 }
 
-class UserDataRepository: UserRepository {
+class UserCoreDataRepository: UserRepository {
     func create(user: User) {
         // Check if a user with the same email already exists
         guard !userExists(withEmail: user.email) else {

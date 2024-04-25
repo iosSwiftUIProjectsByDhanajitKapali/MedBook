@@ -14,7 +14,7 @@ protocol BookmarkManagerProtocol {
 
 struct BookmarkManager: BookmarkManagerProtocol {
     
-    private let bookRepo = BookDataRepository()
+    private let bookRepo = BookmarkCoreDataRepository()
     
     func updateBookmarkStatus(forbook book: Book) {
         if bookRepo.bookExists(withCoverI: book.coverI) {

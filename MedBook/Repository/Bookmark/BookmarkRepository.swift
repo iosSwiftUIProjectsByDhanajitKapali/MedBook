@@ -8,13 +8,13 @@
 import Foundation
 import CoreData
 
-protocol BookRepository {
+protocol BookmarkRepository {
 
     func create(book: Book)
     func getAll() -> [Book]?
 }
 
-class BookDataRepository: BookRepository {
+class BookmarkCoreDataRepository: BookmarkRepository {
     func create(book: Book) {
         // Check if a user with the same email already exists
         guard !bookExists(withCoverI: book.coverI) else {

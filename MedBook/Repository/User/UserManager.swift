@@ -15,7 +15,7 @@ protocol UserManagerProtocol {
 
 struct UserManager: UserManagerProtocol {
     
-    private let userRepo = UserDataRepository()
+    private let userRepo = UserCoreDataRepository()
     
     func createUser(user: User) {
         userRepo.create(user: user)
