@@ -110,38 +110,33 @@ extension HomeScreenViewModel {
         bookManager.fetchBooks(
             forTitle: forTitle,
             page: page
-        ) { res in
-            switch res {
-            case .success(let bookListData):
-                DispatchQueue.main.async {
-                    self.updateBooksWithBookmarks(bookListData: bookListData)
-                }
-            case .failure(let failure):
-                print(failure)
-                DispatchQueue.main.async {
-                    self.isBooksLoading = false
+        ) { books in
+            DispatchQueue.main.async {
+                self.isBooksLoading = false
+                if let books = books {
+                    self.updateBooksWithBookmarks(bookList: books)
                 }
             }
         }
     }
     
-    private func updateBooksWithBookmarks(bookListData: BookListModel) {
-        var bookList = bookListData
+    private func updateBooksWithBookmarks(bookList: [Book]) {
+        var books = bookList
         // Get the bookmarked books
         let bookmarkedBooks = self.bookmarkManager.fetchAllBooks() ?? []
         
-        for index in 0..<bookList.books.count {
-            let book = bookList.books[index]
+        for index in 0..<books.count {
+            let book = books[index]
             
             // Check if the book's coverI exists in bookmarkedBooks
             if let _ = bookmarkedBooks.first(where: { $0.coverI == book.coverI }) {
                 // If found, mark the book as bookmarked
-                bookList.books[index].isBookmarked = true
+                books[index].isBookmarked = true
             }
         }
 
         // Set self.books to bookList.books
-        self.books = bookList.books
+        self.books = books
         self.isBooksLoading = false
     }
 }
